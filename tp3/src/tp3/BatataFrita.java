@@ -4,25 +4,25 @@ public class BatataFrita extends Comida {
 
 private String acompanhamento;
 	
-	public BatataFrita(char tamanho, String descricao, float preco, String acompanhamento) {
+	public BatataFrita(char tamanho, String descricao, double preco, String acompanhamento) {
 		
 		super (tamanho,descricao,preco);
 		this.acompanhamento = acompanhamento;
 		
 	}
 	//função para poder realizar o print das informações
-	public String toString (String tamanho, String descricao, String preco) {
-		return "Especificações da batata frita : \nTamanho = "+tamanho+"\nDescrição = " +descricao+
-				"\n preço = "+preco+"\nacompanhamento(s) = "+acompanhamento;
+	public String toString () {
+		return "Especificações da batata frita : \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
+				"\n preço = "+getPreco()+"\nacompanhamento(s) = "+acompanhamento;
 	}
 	
 	
 	//getter e setter da batata frita
-	protected String getAcompanhamento() {
+	public String getAcompanhamento() {
 		return acompanhamento;
 	}
 
-	protected void setAcompanhamento(String acompanhamento) {
+	public void setAcompanhamento(String acompanhamento) {
 		this.acompanhamento = acompanhamento;
 	}
 }

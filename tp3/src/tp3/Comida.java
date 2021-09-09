@@ -5,10 +5,10 @@ public abstract class Comida {
 	
 	private char tamanho;	
 	private String descricao;
-	private float preco;
+	private double preco;
 	
 	
-	protected Comida (char tamanho, String descricao, float preco) {
+	protected Comida (char tamanho, String descricao, double preco) {
 		
 		this.tamanho = tamanho;
 		this.descricao = descricao;
@@ -35,10 +35,10 @@ public abstract class Comida {
 	}
 	
 	//getters e setters do preço
-	public float getPreco() {
+	public double getPreco() {
 		return preco;
 	}
-	public void setPreco(float preco) {
+	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 	
