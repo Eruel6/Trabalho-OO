@@ -4,43 +4,20 @@ public class FrangoEmpanado extends Comida {
 
 	private String corteDoFrango;
 	
-	public FrangoEmpanado(char t, String d, float p, String c) {
+	public FrangoEmpanado(char tamanho, String descricao, float preco, String corteDoFrango) {
 		
-		tamanho = t;
-		descricao = d;
-		preco = p;
-		corteDoFrango = c;
+		super (tamanho,descricao,preco);
+		this.corteDoFrango = corteDoFrango;
 		
 	}
-	
-	public String toString () {
+	//função para poder realizar o print das informações
+	public String toString (String tamanho, String descricao, String preco) {
 		return "Especificações do frango: \nTamanho = "+tamanho+"\nDescrição = " +descricao+
-				"\npreço é: "+preco+"Corte do Frango é: "+corteDoFrango;
-	}
-
-	public char getTamanho() {
-		return tamanho;
-	}
-	public void setTamanho(char tamanho) {
-		this.tamanho = tamanho;
+				"\npreço = "+preco+"\nCorte do Frango = "+corteDoFrango;
 	}
 	
-	//getters e setters da descrição
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
 	
-	//getters e setters do preço
-	public float getPreco() {
-		return preco;
-	}
-	public void setPreco(float preco) {
-		this.preco = preco;
-	}
-
+	//getter e setter do corte do frango
 	protected String getCorteDoFrango() {
 		return corteDoFrango;
 	}

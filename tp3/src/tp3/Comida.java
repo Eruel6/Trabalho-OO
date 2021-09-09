@@ -1,17 +1,21 @@
 package tp3;
 
-import java.util.ArrayList;
-
 public abstract class Comida {
 
 	
-	protected char tamanho;	
-	protected String descricao;
-	protected float preco;
+	private char tamanho;	
+	private String descricao;
+	private float preco;
 	
-	protected ArrayList<Character> tamanhoSelecionado = new ArrayList<Character>();
-	protected ArrayList<String> descricaoDoProduto= new ArrayList<String>();
-	protected ArrayList<Float> precoProduto = new ArrayList<Float>();
+	
+	protected Comida (char tamanho, String descricao, float preco) {
+		
+		this.tamanho = tamanho;
+		this.descricao = descricao;
+		this.preco = preco;
+		
+	}
+	
 	
 	
 	//getters e setters do tamanho 
