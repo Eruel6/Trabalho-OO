@@ -20,6 +20,11 @@ public class Loja {
 		this.entregadores = new ArrayList<>();
 	}
 
+	@Override
+	public String toString() {
+		return clientes + "\n\n\nEntregadores da Loja\n" + entregadores + ",\nCNPJ da empresa = " + cnpj;
+	}
+
 	public ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
@@ -36,6 +41,29 @@ public class Loja {
 		this.cnpj = cnpj;
 	}
 
+	public Pedido consultaPedido(int numeroDesejado) {
+
+		for (Cliente cliente : this.clientes) {
+			for (Pedido pedido : cliente.getPedidos()) {
+				if (pedido.getNumero() == numeroDesejado) {
+					return pedido;
+				}
+			}
+		}
+		return null;
+	}
+
+	public Entregador consultaEntregador(String nomeDesejado) {
+
+		for (Entregador entregador : this.entregadores) {
+
+			if (entregador.getNome().equalsIgnoreCase(nomeDesejado)) {
+				return entregador;
+			}
+		}
+		return null;
+	}
+
 	public static void main(String[] args) {
 		Loja minhaLoja = new Loja("13.951.785/0001-21");
 
@@ -45,10 +73,14 @@ public class Loja {
 				new ContaBancaria("BRB", 0001, "15985245-9")));
 
 		minhaLoja.getClientes().get(0).getPedidos()
-				.add(new Pedido(1, "crédito", true, minhaLoja.getEntregadores().get(0)));
+				.add(new Pedido(1, "crédito", true, minhaLoja.getEntregadores().get(0), 2.0));
 		minhaLoja.getClientes().get(0).getPedidos().get(0)
 				.add(new FrangoEmpanado('P', "Um delicioso Frango", 17.87, "Peito"));
 
 		System.out.println(minhaLoja);
+		System.out.println();
+		System.out.println(minhaLoja.consultaPedido(1));
+		System.out.println();
+		System.out.println(minhaLoja.consultaEntregador("Kléber II"));
 	}
 }

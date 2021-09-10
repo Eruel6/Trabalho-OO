@@ -6,15 +6,17 @@ public abstract class Pessoa {
 	private String endereco;
 	private String cpf;
 
-	protected Pessoa (String nome, String endereco, String cpf) {
-		
+	protected Pessoa(String nome, String endereco, String cpf) {
+
 		this.nome = nome;
 		this.endereco = endereco;
 		this.cpf = cpf;
-		
+
 	}
 
-	//getter e setter de nome
+	public abstract String toString();
+
+	// getter e setter de nome
 	public String getNome() {
 		return nome;
 	}
@@ -23,8 +25,7 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	
-	//getter e setter de endereço
+	// getter e setter de endereço
 	public String getEndereco() {
 		return endereco;
 	}
@@ -32,9 +33,8 @@ public abstract class Pessoa {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
-	
-	
-	//ggetter e setter de CPF
+
+	// ggetter e setter de CPF
 	public String getCpf() {
 		return cpf;
 	}
@@ -42,5 +42,5 @@ public abstract class Pessoa {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 }

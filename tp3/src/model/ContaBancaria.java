@@ -13,6 +13,12 @@ public class ContaBancaria {
 		this.conta = conta;
 	}
 
+	@Override
+	public String toString() {
+		return "Banco = " + banco + ",\nAgência = " + agencia + ",\nConta = " + conta;
+
+	}
+
 	// getter e setter de banco
 	public String getBanco() {
 		return banco;

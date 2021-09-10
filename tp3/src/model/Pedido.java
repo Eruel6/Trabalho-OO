@@ -10,6 +10,7 @@ public class Pedido {
 	private String metodoDePagamento;
 	private boolean retirada;
 	private Entregador entregador;
+	private double cupomDeDesconto;
 
 	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador) {
 		this.numero = numero;
@@ -18,6 +19,18 @@ public class Pedido {
 		this.metodoDePagamento = metodoDePagamento;
 		this.retirada = retirada;
 		this.entregador = entregador;
+		this.cupomDeDesconto = 0;
+	}
+
+	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador,
+			double cupomDeDesconto) {
+		this.numero = numero;
+		this.itens = new ArrayList<Comida>();
+		this.subtotal = 0;
+		this.metodoDePagamento = metodoDePagamento;
+		this.retirada = retirada;
+		this.entregador = entregador;
+		this.cupomDeDesconto = cupomDeDesconto;
 	}
 
 	private double calculaSubtotal() {
@@ -25,7 +38,7 @@ public class Pedido {
 		for (Comida comida : this.itens) {
 			subtotal += comida.getPreco();
 		}
-		return subtotal;
+		return subtotal - this.cupomDeDesconto;
 	}
 
 	public void add(Comida item) {
@@ -35,8 +48,9 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Número do pedido = " + numero + ",\nitens=" + itens + ",\nsubtotal=" + subtotal
-				+ ",\nmetodoDePagamento=" + metodoDePagamento + ",\nretirada=" + retirada;
+		return "Número do pedido = " + numero + ",\nItens = " + itens + ",\nSubtotal = " + subtotal
+				+ ",\nMetodoDePagamento = " + metodoDePagamento + ",\nRetirada = " + retirada + ",\n" + entregador
+				+ "\nValor do cupom de desconto" + cupomDeDesconto;
 	}
 
 	public int getNumero() {
@@ -83,4 +97,11 @@ public class Pedido {
 		this.entregador = entregador;
 	}
 
+	public double getCupomDeDesconto() {
+		return cupomDeDesconto;
+	}
+
+	public void setCupomDeDesconto(double cupomDeDesconto) {
+		this.cupomDeDesconto = cupomDeDesconto;
+	}
 }
