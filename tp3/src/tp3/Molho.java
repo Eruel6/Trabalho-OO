@@ -11,9 +11,9 @@ private String tipo;
 		
 	}
 	//função para poder realizar o print das informações
-	public String toString (String tamanho, String descricao, String preco) {
-		return "Especificações do frango: \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
-				"\npreço = "+getPreco()+"\nTipo = "+tipo;
+	public String toString () {
+		return "Especificações do molho: \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
+				"\nPreço = "+getPreco()+"\nTipo = "+tipo;
 	}
 	
 	

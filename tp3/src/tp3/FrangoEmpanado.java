@@ -11,9 +11,11 @@ public class FrangoEmpanado extends Comida {
 		
 	}
 	//função para poder realizar o print das informações
-	public String toString (String tamanho, String descricao, String preco) {
+
+	
+	public String toString () {
 		return "Especificações do frango: \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
-				"\npreço = "+getPreco()+"\nCorte do Frango = "+corteDoFrango;
+				"\nPreço = "+getPreco()+"\nCorte do Frango = "+corteDoFrango;
 	}
 	
 	

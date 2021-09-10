@@ -3,13 +3,13 @@ package tp3;
 public class ContaBancaria  {
 
 	private String banco;
-	private int agnecia;
+	private int agencia;
 	private String conta;
 	
-	protected ContaBancaria(String banco, int agnecia, String conta) {
+	protected ContaBancaria(String banco, int agencia, String conta) {
 		super();
 		this.banco = banco;
-		this.agnecia = agnecia;
+		this.agencia = agencia;
 		this.conta = conta;
 	}
 	
@@ -23,10 +23,10 @@ public class ContaBancaria  {
 	
 	//getter e setter de agência
 	public int getAgnecia() {
-		return agnecia;
+		return agencia;
 	}
 	public void setAgnecia(int agnecia) {
-		this.agnecia = agnecia;
+		this.agencia = agnecia;
 	}
 	
 	//getter e setter de conta

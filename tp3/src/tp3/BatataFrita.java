@@ -13,7 +13,7 @@ private String acompanhamento;
 	//função para poder realizar o print das informações
 	public String toString () {
 		return "Especificações da batata frita : \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
-				"\n preço = "+getPreco()+"\nacompanhamento(s) = "+acompanhamento;
+				"\nPreço = "+getPreco()+"\nacompanhamento(s) = "+acompanhamento;
 	}
 	
 	

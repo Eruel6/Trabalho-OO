@@ -11,6 +11,14 @@ public class Cliente extends Pessoa {
 		
 	}
 
+	
+	//função para poder realizar o print das informações
+		public String toString () {
+			return "Dados do Cliente : \nNome = "+getNome()+"\nEndereço = " +getEndereco()+
+					"\nCPF = "+getCpf()+"\ntelefone = "+telefone;
+		}
+	
+	
 	public String getTelefone() {
 		return telefone;
 	}
