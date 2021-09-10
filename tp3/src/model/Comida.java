@@ -1,4 +1,4 @@
-package tp3;
+package model;
 
 public abstract class Comida {
 
@@ -16,6 +16,7 @@ public abstract class Comida {
 		
 	}
 	
+	public abstract String toString();
 	
 	
 	//getters e setters do tamanho 

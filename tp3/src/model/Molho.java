@@ -1,4 +1,4 @@
-package tp3;
+package model;
 
 public class Molho extends Comida{
 
