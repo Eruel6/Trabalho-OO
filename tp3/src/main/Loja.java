@@ -7,6 +7,7 @@ import model.ContaBancaria;
 import model.Entregador;
 import model.FrangoEmpanado;
 import model.Pedido;
+import view.Menu;
 
 public class Loja {
 
@@ -66,6 +67,8 @@ public class Loja {
 
 	public static void main(String[] args) {
 		Loja minhaLoja = new Loja("13.951.785/0001-21");
+
+		new Menu().setVisible(true);
 
 		minhaLoja.getClientes().add(new Cliente("Fagner III", "Brasilia", "025.951.753-46", "(61) 94545-6362"));
 
