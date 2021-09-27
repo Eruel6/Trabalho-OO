@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
+import controller.MenuController;
+
 public class Menu extends JFrame implements ActionListener {
 
 	private final JButton botaoPedido;
@@ -15,10 +17,12 @@ public class Menu extends JFrame implements ActionListener {
 	private final JButton botaoCliente;
 	private final JButton botaoEntregador;
 	private final JLabel menuLabel;
+	private final MenuController controller;
 
 	public Menu() {
 
 		super("Menu");
+		this.controller = new MenuController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -54,7 +58,7 @@ public class Menu extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		this.controller.pressionarBotao(e);
 
 	}
 
@@ -72,6 +76,10 @@ public class Menu extends JFrame implements ActionListener {
 
 	public JButton getBotaoEntregador() {
 		return botaoEntregador;
+	}
+
+	public MenuController getController() {
+		return controller;
 	}
 
 }
