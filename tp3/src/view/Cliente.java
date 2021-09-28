@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import controller.ClienteController;
+
 public class Cliente extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarCliente;
@@ -14,9 +16,13 @@ public class Cliente extends JFrame implements ActionListener {
 	private final JButton botaoExcluirCliente;
 	private final JLabel labelCliente;
 
+	private final ClienteController controllerCliente;
+
 	public Cliente() {
 
 		super("Cliente");
+
+		this.controllerCliente = new ClienteController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -46,7 +52,7 @@ public class Cliente extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		this.controllerCliente.pressionarBotaoCliente(e);
 
 	}
 

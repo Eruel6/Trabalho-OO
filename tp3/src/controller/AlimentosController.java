@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.Alimento;
+import view.BatataFrita;
+import view.Frango;
+import view.Molho;
 
 public class AlimentosController {
 
@@ -23,20 +26,20 @@ public class AlimentosController {
 
 		if (botaoPressionado == view.getBotaoFrango()) {
 
-			// new Pedidos();
+			new Frango();
 
 		}
 
 		if (botaoPressionado == view.getBotaoBatataFrita()) {
 
-			// new Alimento();
+			new BatataFrita();
 
 		}
 
 		if (botaoPressionado == view.getBotaoMolho()) {
 
-			// new Cliente();
-			System.out.println("FUNÇÂO NAO IMPLEMENTADA");
+			new Molho();
+
 		}
 	}
 }
