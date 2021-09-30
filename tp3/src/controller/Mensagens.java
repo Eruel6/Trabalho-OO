@@ -13,7 +13,9 @@ public class Mensagens {
 
 	public void mensagemErroCadastro() {
 
-		JOptionPane.showMessageDialog(null, "Erro ao cadastrar os dados!", null, JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(null,
+				"Erro ao cadastrar os dados!\n " + "Por favor verifique os dados inserido e tente outra vez", null,
+				JOptionPane.ERROR_MESSAGE);
 
 	}
 

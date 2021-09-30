@@ -11,11 +11,13 @@ import view.CadastraBatataFrita;
 public class CadastraBatataFritaController {
 
 	private final CadastraBatataFrita view;
+	private final Mensagens mensagem;
 
 	public CadastraBatataFritaController(CadastraBatataFrita view) {
 
 		super();
 		this.view = view;
+		mensagem = new Mensagens();
 
 	}
 
@@ -34,9 +36,11 @@ public class CadastraBatataFritaController {
 
 			if (model == null) {
 
-				System.out.println("Algo deu errado");
+				mensagem.mensagemErroCadastro();
 
 			} else {
+
+				mensagem.mensagemSucessoCadastro();
 				System.out.println(model);
 
 				new BatataFritaTela().setVisible(true);

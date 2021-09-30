@@ -8,11 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.Mensagens;
+import controller.CadastraClienteController;
 
 public class CadastraCliente extends JFrame implements ActionListener {
-
-	private String novoCliente[] = new String[9];
 
 	private final JButton botaoSalvarCliente;
 	private final JButton botaoCancelar;
@@ -21,14 +19,17 @@ public class CadastraCliente extends JFrame implements ActionListener {
 	private final JLabel labelEndereco;
 	private final JLabel labelCpf;
 	private final JLabel labelTelefone;
-	private JTextField nomeCliente;
-	private JTextField enderecoCliente;
-	private JTextField cpfCliente;
-	private JTextField telefoneCliente;
+	private final JTextField nomeCliente;
+	private final JTextField enderecoCliente;
+	private final JTextField cpfCliente;
+	private final JTextField telefoneCliente;
+	private final CadastraClienteController controller;
 
 	public CadastraCliente() {
 
 		super("Informaçãoes Clientes");
+
+		controller = new CadastraClienteController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -86,27 +87,52 @@ public class CadastraCliente extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Object source = e.getSource();
-
-		if (source == botaoSalvarCliente) {
-
-			novoCliente[0] = nomeCliente.getText();
-			novoCliente[1] = enderecoCliente.getText();
-			novoCliente[2] = cpfCliente.getText();
-			novoCliente[3] = telefoneCliente.getText();
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemSucessoCadastro();
-
-			CadastraCliente.this.dispose();
-
-			/*
-			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
-			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
-			 */
-		} else if (source == botaoCancelar) {
-			CadastraCliente.this.dispose();
-		}
+		controller.pressionarBotaoCliente(e);
 
 	}
+
+	public JButton getBotaoSalvarCliente() {
+		return botaoSalvarCliente;
+	}
+
+	public JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+	public JLabel getLabelTela() {
+		return labelTela;
+	}
+
+	public JLabel getLabelNome() {
+		return labelNome;
+	}
+
+	public JLabel getLabelEndereco() {
+		return labelEndereco;
+	}
+
+	public JLabel getLabelCpf() {
+		return labelCpf;
+	}
+
+	public JLabel getLabelTelefone() {
+		return labelTelefone;
+	}
+
+	public JTextField getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public JTextField getEnderecoCliente() {
+		return enderecoCliente;
+	}
+
+	public JTextField getCpfCliente() {
+		return cpfCliente;
+	}
+
+	public JTextField getTelefoneCliente() {
+		return telefoneCliente;
+	}
+
 }

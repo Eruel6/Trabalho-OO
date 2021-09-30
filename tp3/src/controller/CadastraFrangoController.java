@@ -11,11 +11,13 @@ import view.Frango;
 public class CadastraFrangoController {
 
 	private final CadastraFrango view;
+	private final Mensagens mensagem;
 
 	public CadastraFrangoController(CadastraFrango view) {
 
 		super();
 		this.view = view;
+		mensagem = new Mensagens();
 
 	}
 
@@ -34,9 +36,11 @@ public class CadastraFrangoController {
 
 			if (model == null) {
 
-				System.out.println("Algo deu errado");
+				mensagem.mensagemErroCadastro();
 
 			} else {
+
+				mensagem.mensagemSucessoCadastro();
 				System.out.println(model);
 
 				new Frango().setVisible(true);

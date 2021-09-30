@@ -11,11 +11,13 @@ import view.MolhoTela;
 public class CadastraMolhoController {
 
 	private final CadastraMolho view;
+	private final Mensagens mensagem;
 
 	public CadastraMolhoController(CadastraMolho view) {
 
 		super();
 		this.view = view;
+		mensagem = new Mensagens();
 
 	}
 
@@ -34,9 +36,10 @@ public class CadastraMolhoController {
 
 			if (model == null) {
 
-				System.out.println("Algo deu errado");
+				mensagem.mensagemErroCadastro();
 
 			} else {
+				mensagem.mensagemSucessoCadastro();
 				System.out.println(model);
 
 				new MolhoTela().setVisible(true);
