@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 import controller.BatataFritaController;
 
-public class BatataFrita extends JFrame implements ActionListener {
+public class BatataFritaTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarBatataFrita;
 	private final JButton botaoEditarBatataFrita;
@@ -18,7 +18,7 @@ public class BatataFrita extends JFrame implements ActionListener {
 
 	private final BatataFritaController controllerBatataFrita;
 
-	public BatataFrita() {
+	public BatataFritaTela() {
 
 		super("BatataFrita");
 

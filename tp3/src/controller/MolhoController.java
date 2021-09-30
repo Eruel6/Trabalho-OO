@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.CadastraMolho;
-import view.Molho;
+import view.MolhoTela;
 
 public class MolhoController {
 
-	private final Molho view;
+	private final MolhoTela view;
 
-	public MolhoController(Molho view) {
+	public MolhoController(MolhoTela view) {
 
 		super();
 		this.view = view;
@@ -24,7 +24,8 @@ public class MolhoController {
 
 		if (botaoPressionado == view.getBotaoCadastrarMolho()) {
 
-			new CadastraMolho();
+			new CadastraMolho().setVisible(true);
+			this.view.dispose();
 
 		}
 

@@ -8,11 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.Mensagens;
+import controller.CadastraFrangoController;
 
 public class CadastraFrango extends JFrame implements ActionListener {
-
-	private String novoFrango[] = new String[9];
 
 	private final JButton botaoSalvarFrango;
 	private final JButton botaoCancelar;
@@ -21,15 +19,17 @@ public class CadastraFrango extends JFrame implements ActionListener {
 	private final JLabel labelPreco;
 	private final JLabel labelDescricao;
 	private final JLabel labelCorteDoFrango;
-	private JTextField tamanhoFrango;
-	private JTextField precoFrango;
-	private JTextField descricaoFrango;
-	private JTextField corteDoFrango;
-	// private final JLabel labelCliente;
+	private final JTextField tamanhoFrango;
+	private final JTextField precoFrango;
+	private final JTextField descricaoFrango;
+	private final JTextField corteDoFrango;
+	private final CadastraFrangoController controller;
 
 	public CadastraFrango() {
 
 		super("Informaçãoes Frango");
+
+		this.controller = new CadastraFrangoController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -66,7 +66,7 @@ public class CadastraFrango extends JFrame implements ActionListener {
 		botaoSalvarFrango.addActionListener(this);
 
 		botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(100, 500, 75, 50);
+		botaoCancelar.setBounds(100, 500, 100, 50);
 		botaoCancelar.addActionListener(this);
 
 		this.add(botaoSalvarFrango);
@@ -81,43 +81,57 @@ public class CadastraFrango extends JFrame implements ActionListener {
 		this.add(precoFrango);
 		this.add(corteDoFrango);
 
-		setVisible(true);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Object source = e.getSource();
-
-		try {
-			if (source == botaoSalvarFrango) {
-
-				novoFrango[0] = tamanhoFrango.getText();
-				novoFrango[1] = descricaoFrango.getText();
-				novoFrango[2] = precoFrango.getText();
-				novoFrango[3] = corteDoFrango.getText();
-
-				Mensagens mensagens = new Mensagens();
-				mensagens.mensagemSucessoCadastro();
-
-				CadastraFrango.this.dispose();
-
-			}
-			/*
-			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
-			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
-			 */
-		} catch (NullPointerException exc1) {
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemErroCadastro();
-
-		} catch (NumberFormatException exc2) {
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemErroCadastro();
-
-		}
+		controller.pressionarBotaoFrango(e);
 
 	}
+
+	public JButton getBotaoSalvarFrango() {
+		return botaoSalvarFrango;
+	}
+
+	public JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+	public JLabel getLabelTamanho() {
+		return labelTamanho;
+	}
+
+	public JLabel getLabelTela() {
+		return labelTela;
+	}
+
+	public JLabel getLabelPreco() {
+		return labelPreco;
+	}
+
+	public JLabel getLabelDescricao() {
+		return labelDescricao;
+	}
+
+	public JLabel getLabelCorteDoFrango() {
+		return labelCorteDoFrango;
+	}
+
+	public JTextField getTamanhoFrango() {
+		return tamanhoFrango;
+	}
+
+	public JTextField getPrecoFrango() {
+		return precoFrango;
+	}
+
+	public JTextField getDescricaoFrango() {
+		return descricaoFrango;
+	}
+
+	public JTextField getCorteDoFrango() {
+		return corteDoFrango;
+	}
+
 }

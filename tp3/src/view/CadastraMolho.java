@@ -8,11 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.Mensagens;
+import controller.CadastraMolhoController;
 
 public class CadastraMolho extends JFrame implements ActionListener {
-
-	private String novoMolho[] = new String[9];
 
 	private final JButton botaoSalvarMolho;
 	private final JButton botaoCancelar;
@@ -21,15 +19,17 @@ public class CadastraMolho extends JFrame implements ActionListener {
 	private final JLabel labelPreco;
 	private final JLabel labelDescricao;
 	private final JLabel labelTipo;
-	private JTextField tamanhoMolho;
-	private JTextField precoMolho;
-	private JTextField descricaoMolho;
-	private JTextField tipoMolho;
-	// private final JLabel labelCliente;
+	private final JTextField tamanhoMolho;
+	private final JTextField precoMolho;
+	private final JTextField descricaoMolho;
+	private final JTextField tipoMolho;
+	private final CadastraMolhoController controller;
 
 	public CadastraMolho() {
 
 		super("Informaçãoes Molho");
+
+		controller = new CadastraMolhoController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -66,7 +66,7 @@ public class CadastraMolho extends JFrame implements ActionListener {
 		botaoSalvarMolho.addActionListener(this);
 
 		botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(100, 500, 75, 50);
+		botaoCancelar.setBounds(100, 500, 100, 50);
 		botaoCancelar.addActionListener(this);
 
 		this.add(botaoSalvarMolho);
@@ -81,31 +81,57 @@ public class CadastraMolho extends JFrame implements ActionListener {
 		this.add(precoMolho);
 		this.add(tipoMolho);
 
-		setVisible(true);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Object source = e.getSource();
-
-		if (source == botaoSalvarMolho) {
-
-			novoMolho[0] = tamanhoMolho.getText();
-			novoMolho[1] = descricaoMolho.getText();
-			novoMolho[2] = precoMolho.getText();
-			novoMolho[3] = tipoMolho.getText();
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemSucessoCadastro();
-
-			CadastraMolho.this.dispose();
-
-			/*
-			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
-			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
-			 */
-		}
+		controller.pressionarBotaoMolho(e);
 
 	}
+
+	public JButton getBotaoSalvarMolho() {
+		return botaoSalvarMolho;
+	}
+
+	public JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+	public JLabel getLabelTamanho() {
+		return labelTamanho;
+	}
+
+	public JLabel getLabelTela() {
+		return labelTela;
+	}
+
+	public JLabel getLabelPreco() {
+		return labelPreco;
+	}
+
+	public JLabel getLabelDescricao() {
+		return labelDescricao;
+	}
+
+	public JLabel getLabelTipo() {
+		return labelTipo;
+	}
+
+	public JTextField getTamanhoMolho() {
+		return tamanhoMolho;
+	}
+
+	public JTextField getPrecoMolho() {
+		return precoMolho;
+	}
+
+	public JTextField getDescricaoMolho() {
+		return descricaoMolho;
+	}
+
+	public JTextField getTipoMolho() {
+		return tipoMolho;
+	}
+
 }

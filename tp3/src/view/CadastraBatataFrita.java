@@ -8,11 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.Mensagens;
+import controller.CadastraBatataFritaController;
 
 public class CadastraBatataFrita extends JFrame implements ActionListener {
 
-	private String novaBatataFrita[] = new String[9];
+//	private String novaBatataFrita[] = new String[9];
 
 	private final JButton botaoSalvarBatataFrita;
 	private final JButton botaoCancelar;
@@ -21,15 +21,19 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 	private final JLabel labelPreco;
 	private final JLabel labelDescricao;
 	private final JLabel labelAcompanhamentos;
-	private JTextField tamanhoBatataFrita;
-	private JTextField precoBatataFrita;
-	private JTextField descricaoBatataFrita;
-	private JTextField acompanhamentoBatataFrita;
+	private final JTextField tamanhoBatataFrita;
+	private final JTextField precoBatataFrita;
+	private final JTextField descricaoBatataFrita;
+	private final JTextField acompanhamentoBatataFrita;
 	// private final JLabel labelCliente;
+
+	private final CadastraBatataFritaController controller;
 
 	public CadastraBatataFrita() {
 
 		super("Informaçãoes BatataFrita");
+
+		this.controller = new CadastraBatataFritaController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -66,7 +70,7 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 		botaoSalvarBatataFrita.addActionListener(this);
 
 		botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(100, 500, 75, 50);
+		botaoCancelar.setBounds(100, 500, 100, 50);
 		botaoCancelar.addActionListener(this);
 
 		this.add(botaoSalvarBatataFrita);
@@ -81,31 +85,58 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 		this.add(precoBatataFrita);
 		this.add(acompanhamentoBatataFrita);
 
-		setVisible(true);
+//		setVisible(true);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Object source = e.getSource();
-
-		if (source == botaoSalvarBatataFrita) {
-
-			novaBatataFrita[0] = tamanhoBatataFrita.getText();
-			novaBatataFrita[1] = descricaoBatataFrita.getText();
-			novaBatataFrita[2] = precoBatataFrita.getText();
-			novaBatataFrita[3] = acompanhamentoBatataFrita.getText();
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemSucessoCadastro();
-
-			CadastraBatataFrita.this.dispose();
-
-			/*
-			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
-			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
-			 */
-		}
+		controller.pressionarBotaoBatataFrita(e);
 
 	}
+
+	public JButton getBotaoSalvarBatataFrita() {
+		return botaoSalvarBatataFrita;
+	}
+
+	public JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+	public JLabel getLabelTamanho() {
+		return labelTamanho;
+	}
+
+	public JLabel getLabelTela() {
+		return labelTela;
+	}
+
+	public JLabel getLabelPreco() {
+		return labelPreco;
+	}
+
+	public JLabel getLabelDescricao() {
+		return labelDescricao;
+	}
+
+	public JLabel getLabelAcompanhamentos() {
+		return labelAcompanhamentos;
+	}
+
+	public JTextField getTamanhoBatataFrita() {
+		return tamanhoBatataFrita;
+	}
+
+	public JTextField getPrecoBatataFrita() {
+		return precoBatataFrita;
+	}
+
+	public JTextField getDescricaoBatataFrita() {
+		return descricaoBatataFrita;
+	}
+
+	public JTextField getAcompanhamentoBatataFrita() {
+		return acompanhamentoBatataFrita;
+	}
+
 }

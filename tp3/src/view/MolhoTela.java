@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 import controller.MolhoController;
 
-public class Molho extends JFrame implements ActionListener {
+public class MolhoTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarMolho;
 	private final JButton botaoEditarMolho;
@@ -18,7 +18,7 @@ public class Molho extends JFrame implements ActionListener {
 
 	private final MolhoController controllerMolho;
 
-	public Molho() {
+	public MolhoTela() {
 
 		super("Molho");
 

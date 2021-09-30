@@ -4,14 +4,14 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
-import view.BatataFrita;
+import view.BatataFritaTela;
 import view.CadastraBatataFrita;
 
 public class BatataFritaController {
 
-	private final BatataFrita view;
+	private final BatataFritaTela view;
 
-	public BatataFritaController(BatataFrita view) {
+	public BatataFritaController(BatataFritaTela view) {
 
 		super();
 		this.view = view;
@@ -24,7 +24,8 @@ public class BatataFritaController {
 
 		if (botaoPressionado == view.getBotaoCadastrarBatataFrita()) {
 
-			new CadastraBatataFrita();
+			new CadastraBatataFrita().setVisible(true);
+			this.view.dispose();
 
 		}
 

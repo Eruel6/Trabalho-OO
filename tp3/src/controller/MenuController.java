@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.Alimento;
-import view.Cliente;
+import view.ClienteTela;
 import view.Entregador;
 import view.Menu;
 import view.Pedidos;
@@ -39,7 +39,7 @@ public class MenuController {
 
 		if (botaoPressionado == view.getBotaoCliente()) {
 
-			new Cliente();
+			new ClienteTela();
 
 		}
 		if (botaoPressionado == view.getBotaoEntregador()) {

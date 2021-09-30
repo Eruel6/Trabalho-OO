@@ -7,16 +7,22 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import controller.EntregadorController;
+
 public class Entregador extends JFrame implements ActionListener {
 
-	private final JButton botaoCadastrarEntragador;
+	private final JButton botaoCadastrarEntregador;
 	private final JButton botaoEditarEntregador;
 	private final JButton botaoExcluirEntregador;
 	private final JLabel labelEntregador;
 
+	private final EntregadorController controllerEntregador;
+
 	public Entregador() {
 
 		super("Entregador");
+
+		this.controllerEntregador = new EntregadorController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -24,9 +30,9 @@ public class Entregador extends JFrame implements ActionListener {
 		labelEntregador = new JLabel("Tela Entregadores");
 		labelEntregador.setBounds(160, 0, 200, 50);
 
-		botaoCadastrarEntragador = new JButton("Cadastrar");
-		botaoCadastrarEntragador.setBounds(100, 50, 200, 100);
-		botaoCadastrarEntragador.addActionListener(this);
+		botaoCadastrarEntregador = new JButton("Cadastrar");
+		botaoCadastrarEntregador.setBounds(100, 50, 200, 100);
+		botaoCadastrarEntregador.addActionListener(this);
 
 		botaoEditarEntregador = new JButton("Editar");
 		botaoEditarEntregador.setBounds(100, 175, 200, 100);
@@ -36,7 +42,7 @@ public class Entregador extends JFrame implements ActionListener {
 		botaoExcluirEntregador.setBounds(100, 300, 200, 100);
 		botaoExcluirEntregador.addActionListener(this);
 
-		this.add(botaoCadastrarEntragador);
+		this.add(botaoCadastrarEntregador);
 		this.add(botaoEditarEntregador);
 		this.add(botaoExcluirEntregador);
 		this.add(labelEntregador);
@@ -46,12 +52,12 @@ public class Entregador extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		this.controllerEntregador.pressionarBotaoEntregador(e);
 
 	}
 
 	public JButton getBotaoCadastrarEntragador() {
-		return botaoCadastrarEntragador;
+		return botaoCadastrarEntregador;
 	}
 
 	public JButton getBotaoEditarEntregador() {

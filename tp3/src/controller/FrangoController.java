@@ -24,7 +24,8 @@ public class FrangoController {
 
 		if (botaoPressionado == view.getBotaoCadastrarFrango()) {
 
-			new CadastraFrango();
+			new CadastraFrango().setVisible(true);
+			this.view.dispose();
 
 		}
 

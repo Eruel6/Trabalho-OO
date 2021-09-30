@@ -65,7 +65,7 @@ public class CadastraCliente extends JFrame implements ActionListener {
 		botaoSalvarCliente.addActionListener(this);
 
 		botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(100, 500, 75, 50);
+		botaoCancelar.setBounds(100, 500, 100, 50);
 		botaoCancelar.addActionListener(this);
 
 		this.add(botaoSalvarCliente);
@@ -104,6 +104,8 @@ public class CadastraCliente extends JFrame implements ActionListener {
 			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
 			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
 			 */
+		} else if (source == botaoCancelar) {
+			CadastraCliente.this.dispose();
 		}
 
 	}

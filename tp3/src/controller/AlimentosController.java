@@ -5,9 +5,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.Alimento;
-import view.BatataFrita;
+import view.BatataFritaTela;
 import view.Frango;
-import view.Molho;
+import view.MolhoTela;
 
 public class AlimentosController {
 
@@ -27,18 +27,20 @@ public class AlimentosController {
 		if (botaoPressionado == view.getBotaoFrango()) {
 
 			new Frango();
-
+			this.view.dispose();
 		}
 
 		if (botaoPressionado == view.getBotaoBatataFrita()) {
 
-			new BatataFrita();
+			new BatataFritaTela();
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoMolho()) {
 
-			new Molho();
+			new MolhoTela();
+			this.view.dispose();
 
 		}
 	}

@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.CadastraCliente;
-import view.Cliente;
+import view.ClienteTela;
 
 public class ClienteController {
 
-	private final Cliente view;
+	private final ClienteTela view;
 
-	public ClienteController(Cliente view) {
+	public ClienteController(ClienteTela view) {
 
 		super();
 		this.view = view;

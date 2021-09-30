@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 import controller.ClienteController;
 
-public class Cliente extends JFrame implements ActionListener {
+public class ClienteTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarCliente;
 	private final JButton botaoEditarCliente;
@@ -18,7 +18,7 @@ public class Cliente extends JFrame implements ActionListener {
 
 	private final ClienteController controllerCliente;
 
-	public Cliente() {
+	public ClienteTela() {
 
 		super("Cliente");
 
