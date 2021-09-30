@@ -6,7 +6,7 @@ import javax.swing.JButton;
 
 import view.Alimento;
 import view.ClienteTela;
-import view.Entregador;
+import view.EntregadorTela;
 import view.Menu;
 import view.Pedidos;
 
@@ -44,7 +44,7 @@ public class MenuController {
 		}
 		if (botaoPressionado == view.getBotaoEntregador()) {
 
-			new Entregador();
+			new EntregadorTela();
 
 		}
 	}

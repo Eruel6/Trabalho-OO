@@ -8,11 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.Mensagens;
+import controller.CadastraEntregadorController;
 
 public class CadastraEntregador extends JFrame implements ActionListener {
 
-	private String novoEntregador[] = new String[9];
+	private final CadastraEntregadorController controller;
 
 //	-------------------Labels Entregador
 	private final JButton botaoSalvarEntregador;
@@ -31,20 +31,22 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 	private final JLabel labelNumeroContaEntregador;
 
 //	==================== CRUD Entregador
-	private JTextField nomeEntregador;
-	private JTextField enderecoEntregador;
-	private JTextField cpfEntregador;
-	private JTextField modalidadeEntregador;
-	private JTextField notaEntregador;
+	private final JTextField nomeEntregador;
+	private final JTextField enderecoEntregador;
+	private final JTextField cpfEntregador;
+	private final JTextField modalidadeEntregador;
+	private final JTextField notaEntregador;
 
 //	---------------- CRUD ContaBancaria
-	private JTextField bancoContaEntregador;
-	private JTextField agenciaContaEntregador;
-	private JTextField numeroContaEntregador;
+	private final JTextField bancoContaEntregador;
+	private final JTextField agenciaContaEntregador;
+	private final JTextField numeroContaEntregador;
 
 	public CadastraEntregador() {
 
 		super("Informaçãoes Clientes");
+
+		this.controller = new CadastraEntregadorController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
@@ -140,31 +142,88 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		Object source = e.getSource();
-
-		if (source == botaoSalvarEntregador) {
-
-			novoEntregador[0] = nomeEntregador.getText();
-			novoEntregador[1] = enderecoEntregador.getText();
-			novoEntregador[2] = cpfEntregador.getText();
-			novoEntregador[3] = modalidadeEntregador.getText();
-			novoEntregador[4] = notaEntregador.getText();
-			novoEntregador[5] = bancoContaEntregador.getText();
-			novoEntregador[6] = agenciaContaEntregador.getText();
-			novoEntregador[7] = numeroContaEntregador.getText();
-
-			Mensagens mensagens = new Mensagens();
-			mensagens.mensagemSucessoCadastro();
-
-			CadastraEntregador.this.dispose();
-
-			/*
-			 * System.out.println(novoFrango[0]); System.out.println(novoFrango[1]);
-			 * System.out.println(novoFrango[2]); System.out.println(novoFrango[3]);
-			 */
-		} else if (source == botaoCancelar) {
-			CadastraEntregador.this.dispose();
-		}
+		controller.pressionarBotaoEntregador(e);
 
 	}
+
+	public JButton getBotaoSalvarEntregador() {
+		return botaoSalvarEntregador;
+	}
+
+	public JButton getBotaoCancelar() {
+		return botaoCancelar;
+	}
+
+	public JLabel getLabelTela() {
+		return labelTela;
+	}
+
+	public JLabel getLabelNomeEntregador() {
+		return labelNomeEntregador;
+	}
+
+	public JLabel getLabelEnderecoEntregador() {
+		return labelEnderecoEntregador;
+	}
+
+	public JLabel getLabelCpfEntregador() {
+		return labelCpfEntregador;
+	}
+
+	public JLabel getLabelModalidadeEntregador() {
+		return labelModalidadeEntregador;
+	}
+
+	public JLabel getLabelNotaEntregador() {
+		return labelNotaEntregador;
+	}
+
+	public JLabel getLabelContaEntregador() {
+		return labelContaEntregador;
+	}
+
+	public JLabel getLabelBancoContaEntregador() {
+		return labelBancoContaEntregador;
+	}
+
+	public JLabel getLabelAgenciaContaEntregador() {
+		return labelAgenciaContaEntregador;
+	}
+
+	public JLabel getLabelNumeroContaEntregador() {
+		return labelNumeroContaEntregador;
+	}
+
+	public JTextField getNomeEntregador() {
+		return nomeEntregador;
+	}
+
+	public JTextField getEnderecoEntregador() {
+		return enderecoEntregador;
+	}
+
+	public JTextField getCpfEntregador() {
+		return cpfEntregador;
+	}
+
+	public JTextField getModalidadeEntregador() {
+		return modalidadeEntregador;
+	}
+
+	public JTextField getNotaEntregador() {
+		return notaEntregador;
+	}
+
+	public JTextField getBancoContaEntregador() {
+		return bancoContaEntregador;
+	}
+
+	public JTextField getAgenciaContaEntregador() {
+		return agenciaContaEntregador;
+	}
+
+	public JTextField getNumeroContaEntregador() {
+		return numeroContaEntregador;
+	}
+
 }

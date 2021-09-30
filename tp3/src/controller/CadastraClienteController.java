@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
+import database.Dados;
 import model.Cliente;
 import view.CadastraCliente;
 import view.ClienteTela;
@@ -40,6 +41,7 @@ public class CadastraClienteController {
 
 			} else {
 				System.out.println(model);
+				Dados.getClientes().add(model);
 				mensagem.mensagemSucessoCadastro();
 
 				new ClienteTela().setVisible(true);
@@ -67,7 +69,7 @@ public class CadastraClienteController {
 			return null;
 
 		}
-		if (cpf.isBlank() || cpf.length() > 15 && cpf.length() < 10) {
+		if (cpf.isBlank() || cpf.length() > 15 || cpf.length() < 10) {
 			return null;
 		}
 		if (telefone.isBlank() || telefone.length() < 10 && telefone.length() > 16) {

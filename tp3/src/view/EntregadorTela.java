@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 
 import controller.EntregadorController;
 
-public class Entregador extends JFrame implements ActionListener {
+public class EntregadorTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarEntregador;
 	private final JButton botaoEditarEntregador;
@@ -18,7 +18,7 @@ public class Entregador extends JFrame implements ActionListener {
 
 	private final EntregadorController controllerEntregador;
 
-	public Entregador() {
+	public EntregadorTela() {
 
 		super("Entregador");
 

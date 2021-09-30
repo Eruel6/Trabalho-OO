@@ -5,13 +5,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 import view.CadastraEntregador;
-import view.Entregador;
+import view.EntregadorTela;
 
 public class EntregadorController {
 
-	private final Entregador view;
+	private final EntregadorTela view;
 
-	public EntregadorController(Entregador view) {
+	public EntregadorController(EntregadorTela view) {
 
 		super();
 		this.view = view;
