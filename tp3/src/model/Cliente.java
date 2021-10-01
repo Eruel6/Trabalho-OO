@@ -20,6 +20,7 @@ public class Cliente extends Pessoa {
 	}
 
 	// função para poder realizar o print das informações
+	@Override
 	public String toString() {
 		return "Dados do Cliente : \nNome = " + getNome() + "\nEndereço = " + getEndereco() + "\nCPF = " + getCpf()
 				+ "\nTelefone = " + telefone + "\nPedidos do cliente: " + pedidos;

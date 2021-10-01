@@ -39,15 +39,15 @@ public class Menu extends JFrame implements ActionListener {
 		botaoAlimento.addActionListener(this);
 
 		botaoCliente = new JButton("Cliente");
-		botaoCliente.setBounds(100, 300, 200, 100);
+		botaoCliente.setBounds(100, 75, 200, 150);
 		botaoCliente.addActionListener(this);
 
 		botaoEntregador = new JButton("Entregador");
-		botaoEntregador.setBounds(100, 425, 200, 100);
+		botaoEntregador.setBounds(100, 300, 200, 150);
 		botaoEntregador.addActionListener(this);
 
-		this.add(botaoPedido);
-		this.add(botaoAlimento);
+		// this.add(botaoPedido);
+		// this.add(botaoAlimento);
 		this.add(botaoCliente);
 		this.add(botaoEntregador);
 		this.add(menuLabel);

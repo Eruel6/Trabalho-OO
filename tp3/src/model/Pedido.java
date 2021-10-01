@@ -14,7 +14,7 @@ public class Pedido {
 
 	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador) {
 		this.numero = numero;
-		this.itens = new ArrayList<Comida>();
+		this.itens = new ArrayList<>();
 		this.subtotal = 0;
 		this.metodoDePagamento = metodoDePagamento;
 		this.retirada = retirada;
@@ -25,7 +25,7 @@ public class Pedido {
 	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador,
 			double cupomDeDesconto) {
 		this.numero = numero;
-		this.itens = new ArrayList<Comida>();
+		this.itens = new ArrayList<>();
 		this.subtotal = 0;
 		this.metodoDePagamento = metodoDePagamento;
 		this.retirada = retirada;

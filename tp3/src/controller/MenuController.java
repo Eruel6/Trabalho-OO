@@ -4,11 +4,9 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
-import view.Alimento;
 import view.ClienteTela;
 import view.EntregadorTela;
 import view.Menu;
-import view.Pedidos;
 
 public class MenuController {
 
@@ -25,19 +23,19 @@ public class MenuController {
 
 		JButton botaoPressionado = (JButton) e.getSource();
 
-		if (botaoPressionado == view.getBotaoPedido()) {
-
-			new Pedidos();
-			// this.view.dispose();
-
-		}
-
-		if (botaoPressionado == view.getBotaoAlimento()) {
-
-			new Alimento();
-			this.view.dispose();
-
-		}
+		/*
+		 * if (botaoPressionado == view.getBotaoPedido()) {
+		 *
+		 * new Pedidos(); this.view.dispose();
+		 *
+		 * }
+		 *
+		 * if (botaoPressionado == view.getBotaoAlimento()) {
+		 *
+		 * new Alimento(); this.view.dispose();
+		 *
+		 * }
+		 */
 
 		if (botaoPressionado == view.getBotaoCliente()) {
 

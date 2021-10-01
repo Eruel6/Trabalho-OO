@@ -15,6 +15,7 @@ public class Entregador extends Pessoa {
 	}
 
 	// função para poder realizar o print das informações
+	@Override
 	public String toString() {
 		return "Dados do Entregador : \nNome = " + getNome() + "\nEndereço = " + getEndereco() + "\nCPF = " + getCpf()
 				+ "\nModalidade = " + modalidade + "\nNota = " + nota + "\nConta Bancaria = " + conta.getConta();

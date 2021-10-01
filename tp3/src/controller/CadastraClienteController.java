@@ -46,11 +46,44 @@ public class CadastraClienteController {
 
 				new ClienteTela().setVisible(true);
 				this.view.dispose();
+
 			}
 
 		}
 
 	}
+
+//	public void editarCliente(ActionEvent e) {
+//
+//		JButton botaoPressionado = (JButton) e.getSource();
+//
+//		if (botaoPressionado == this.view.getBotaoCancelar()) {
+//
+//			new ClienteTela().setVisible(true);
+//			this.view.dispose();
+//
+//		} else if (botaoPressionado == this.view.getBotaoSalvarCliente()) {
+//
+//			Cliente model = validaDados();
+//
+//			if (model == null) {
+//
+//				mensagem.mensagemErroCadastro();
+//
+//			} else {
+//				System.out.println(model);
+//				Dados.getClientes().add(model);
+//				mensagem.mensagemSucessoCadastro();
+//
+//
+//				new ClienteTela().setVisible(true);
+//				this.view.dispose();
+//
+//			}
+//
+//		}
+//
+//	}
 
 	private Cliente validaDados() {
 
@@ -59,12 +92,7 @@ public class CadastraClienteController {
 		String cpf = this.view.getCpfCliente().getText();
 		String telefone = this.view.getTelefoneCliente().getText();
 
-		if ((nome.isBlank())) {
-
-			return null;
-
-		}
-		if ((endereco.isBlank())) {
+		if ((nome.isBlank()) || (endereco.isBlank())) {
 
 			return null;
 

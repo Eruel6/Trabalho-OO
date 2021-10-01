@@ -30,7 +30,7 @@ public class EntregadorTela extends JFrame implements ActionListener {
 		this.setSize(400, 600);
 		this.setLayout(null);
 
-		listaEntregadores = new JList<String>();
+		listaEntregadores = new JList<>();
 		listaEntregadores.setModel(controllerEntregador.gerarListaEntregadores());
 		listaEntregadores.setBounds(10, 40, 350, 200);
 
@@ -38,15 +38,15 @@ public class EntregadorTela extends JFrame implements ActionListener {
 		labelEntregador.setBounds(160, 0, 200, 50);
 
 		botaoCadastrarEntregador = new JButton("Cadastrar");
-		botaoCadastrarEntregador.setBounds(30, 500, 100, 50);
+		botaoCadastrarEntregador.setBounds(30, 270, 100, 60);
 		botaoCadastrarEntregador.addActionListener(this);
 
 		botaoEditarEntregador = new JButton("Editar");
-		botaoEditarEntregador.setBounds(100, 175, 200, 100);
+		botaoEditarEntregador.setBounds(30, 360, 100, 60);
 		botaoEditarEntregador.addActionListener(this);
 
 		botaoExcluirEntregador = new JButton("Excluir");
-		botaoExcluirEntregador.setBounds(100, 300, 200, 100);
+		botaoExcluirEntregador.setBounds(30, 450, 100, 60);
 		botaoExcluirEntregador.addActionListener(this);
 
 		botaoVoltar = new JButton("Voltar");
@@ -54,8 +54,8 @@ public class EntregadorTela extends JFrame implements ActionListener {
 		botaoVoltar.addActionListener(this);
 
 		this.add(botaoCadastrarEntregador);
-		// this.add(botaoEditarEntregador);
-		// this.add(botaoExcluirEntregador);
+		this.add(botaoEditarEntregador);
+		this.add(botaoExcluirEntregador);
 		this.add(labelEntregador);
 		this.add(botaoVoltar);
 		this.add(listaEntregadores);
@@ -83,6 +83,14 @@ public class EntregadorTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
+	}
+
+	public JList<String> getListaEntregadores() {
+		return listaEntregadores;
+	}
+
+	public void setListaEntregadores(JList<String> listaEntregadores) {
+		this.listaEntregadores = listaEntregadores;
 	}
 
 }

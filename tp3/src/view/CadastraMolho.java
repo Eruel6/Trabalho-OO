@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controller.CadastraMolhoController;
+import model.Pedido;
 
 public class CadastraMolho extends JFrame implements ActionListener {
 
@@ -24,13 +25,15 @@ public class CadastraMolho extends JFrame implements ActionListener {
 	private final JTextField descricaoMolho;
 	private final JTextField tipoMolho;
 	private final CadastraMolhoController controller;
+	private final Pedido pedido;
 
-	public CadastraMolho() {
+	public CadastraMolho(Pedido pedido) {
 
 		super("Informaçãoes Molho");
 
 		controller = new CadastraMolhoController(this);
 
+		this.pedido = pedido;
 		this.setSize(400, 600);
 		this.setLayout(null);
 
@@ -132,6 +135,14 @@ public class CadastraMolho extends JFrame implements ActionListener {
 
 	public JTextField getTipoMolho() {
 		return tipoMolho;
+	}
+
+	public CadastraMolhoController getController() {
+		return controller;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
 	}
 
 }

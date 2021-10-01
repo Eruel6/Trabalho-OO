@@ -27,7 +27,7 @@ public class CadastraBatataFritaController {
 
 		if (botaoPressionado == this.view.getBotaoCancelar()) {
 
-			new BatataFritaTela().setVisible(true);
+			new BatataFritaTela(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		} else if (botaoPressionado == this.view.getBotaoSalvarBatataFrita()) {
@@ -41,9 +41,9 @@ public class CadastraBatataFritaController {
 			} else {
 
 				mensagem.mensagemSucessoCadastro();
-				System.out.println(model);
+				view.getPedido().getItens().add(model);
 
-				new BatataFritaTela().setVisible(true);
+				new BatataFritaTela(view.getPedido()).setVisible(true);
 				this.view.dispose();
 			}
 
@@ -60,17 +60,7 @@ public class CadastraBatataFritaController {
 
 		double precoValidado;
 
-		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G"))) {
-
-			return null;
-
-		}
-		if ((descricao.isBlank())) {
-
-			return null;
-
-		}
-		if (acompanhamento.isBlank()) {
+		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank()) || acompanhamento.isBlank()) {
 			return null;
 		}
 		try {

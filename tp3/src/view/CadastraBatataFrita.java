@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controller.CadastraBatataFritaController;
+import model.Pedido;
 
 public class CadastraBatataFrita extends JFrame implements ActionListener {
 
@@ -25,14 +26,15 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 	private final JTextField precoBatataFrita;
 	private final JTextField descricaoBatataFrita;
 	private final JTextField acompanhamentoBatataFrita;
-	// private final JLabel labelCliente;
+	private final Pedido pedido;
 
 	private final CadastraBatataFritaController controller;
 
-	public CadastraBatataFrita() {
+	public CadastraBatataFrita(Pedido pedido) {
 
 		super("Informaçãoes BatataFrita");
 
+		this.pedido = pedido;
 		this.controller = new CadastraBatataFritaController(this);
 
 		this.setSize(400, 600);
@@ -137,6 +139,14 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 
 	public JTextField getAcompanhamentoBatataFrita() {
 		return acompanhamentoBatataFrita;
+	}
+
+	public CadastraBatataFritaController getController() {
+		return controller;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
 	}
 
 }

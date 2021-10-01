@@ -27,7 +27,7 @@ public class CadastraFrangoController {
 
 		if (botaoPressionado == this.view.getBotaoCancelar()) {
 
-			new Frango().setVisible(true);
+			new Frango(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		} else if (botaoPressionado == this.view.getBotaoSalvarFrango()) {
@@ -41,9 +41,9 @@ public class CadastraFrangoController {
 			} else {
 
 				mensagem.mensagemSucessoCadastro();
-				System.out.println(model);
+				view.getPedido().getItens().add(model);
 
-				new Frango().setVisible(true);
+				new Frango(view.getPedido()).setVisible(true);
 				this.view.dispose();
 			}
 
@@ -60,17 +60,7 @@ public class CadastraFrangoController {
 
 		double precoValidado;
 
-		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G"))) {
-
-			return null;
-
-		}
-		if ((descricao.isBlank())) {
-
-			return null;
-
-		}
-		if (corteDoFrango.isBlank()) {
+		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank()) || corteDoFrango.isBlank()) {
 			return null;
 		}
 		try {

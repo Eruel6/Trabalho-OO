@@ -27,20 +27,20 @@ public class AlimentosController {
 
 		if (botaoPressionado == view.getBotaoFrango()) {
 
-			new Frango();
+			new Frango(view.getPedido());
 			this.view.dispose();
 		}
 
 		if (botaoPressionado == view.getBotaoBatataFrita()) {
 
-			new BatataFritaTela();
+			new BatataFritaTela(view.getPedido());
 			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoMolho()) {
 
-			new MolhoTela();
+			new MolhoTela(view.getPedido());
 			this.view.dispose();
 
 		}

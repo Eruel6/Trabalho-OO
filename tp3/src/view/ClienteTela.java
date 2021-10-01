@@ -19,6 +19,7 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 	private final JButton botaoEditarCliente;
 	private final JButton botaoExcluirCliente;
 	private final JButton botaoVoltar;
+	private final JButton botaoPedido;
 	private final JLabel labelCliente;
 	private JList<String> listaClientes;
 
@@ -33,10 +34,7 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 		this.setSize(400, 600);
 		this.setLayout(null);
 
-		// Dados.getClientes().add(new Cliente("Fagner III", "Brasilia",
-		// "025.951.753-46", "(61) 94545-6362"));
-		// controllerCliente.gerarListaCliente().addElement(Dados.getClientes().get(0).getNome());
-		listaClientes = new JList<String>();
+		listaClientes = new JList<>();
 		listaClientes.setModel(controllerCliente.gerarListaCliente());
 		listaClientes.setBounds(10, 40, 350, 200);
 		listaClientes.addListSelectionListener(this);
@@ -44,16 +42,20 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 		labelCliente = new JLabel("Tela Clientes");
 		labelCliente.setBounds(160, 0, 200, 50);
 
+		botaoPedido = new JButton("Pedido");
+		botaoPedido.setBounds(250, 360, 100, 60);
+		botaoPedido.addActionListener(this);
+
 		botaoCadastrarCliente = new JButton("Cadastrar");
-		botaoCadastrarCliente.setBounds(30, 500, 100, 50);
+		botaoCadastrarCliente.setBounds(30, 270, 100, 60);
 		botaoCadastrarCliente.addActionListener(this);
 
 		botaoEditarCliente = new JButton("Editar");
-		botaoEditarCliente.setBounds(100, 175, 200, 100);
+		botaoEditarCliente.setBounds(30, 360, 100, 60);
 		botaoEditarCliente.addActionListener(this);
 
 		botaoExcluirCliente = new JButton("Excluir");
-		botaoExcluirCliente.setBounds(100, 300, 200, 100);
+		botaoExcluirCliente.setBounds(30, 450, 100, 60);
 		botaoExcluirCliente.addActionListener(this);
 
 		botaoVoltar = new JButton("Voltar");
@@ -61,11 +63,12 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 		botaoVoltar.addActionListener(this);
 
 		this.add(botaoCadastrarCliente);
-		// this.add(botaoEditarCliente);
-		// this.add(botaoExcluirCliente);
+		this.add(botaoEditarCliente);
+		this.add(botaoExcluirCliente);
 		this.add(labelCliente);
 		this.add(botaoVoltar);
 		this.add(listaClientes);
+		this.add(botaoPedido);
 
 		setVisible(true);
 	}
@@ -99,6 +102,10 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
+	}
+
+	public JButton getBotaoPedido() {
+		return botaoPedido;
 	}
 
 	public JList<String> getListaClientes() {

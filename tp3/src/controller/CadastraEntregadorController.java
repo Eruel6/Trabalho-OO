@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
+import database.Dados;
 import model.ContaBancaria;
 import model.Entregador;
 import view.CadastraEntregador;
@@ -40,7 +41,7 @@ public class CadastraEntregadorController {
 				mensagem.mensagemErroCadastro();
 
 			} else {
-				System.out.println(model);
+				Dados.getEntregadores().add(model);
 				mensagem.mensagemSucessoCadastro();
 
 				new EntregadorTela().setVisible(true);
@@ -67,12 +68,7 @@ public class CadastraEntregadorController {
 		double notaValidada;
 		int agenciaValidada;
 
-		if ((nome.isBlank())) {
-
-			return null;
-
-		}
-		if ((endereco.isBlank())) {
+		if ((nome.isBlank()) || (endereco.isBlank())) {
 
 			return null;
 

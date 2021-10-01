@@ -2,22 +2,23 @@ package model;
 
 public class BatataFrita extends Comida {
 
-private String acompanhamento;
-	
+	private String acompanhamento;
+
 	public BatataFrita(char tamanho, String descricao, double preco, String acompanhamento) {
-		
-		super (tamanho,descricao,preco);
+
+		super(tamanho, descricao, preco);
 		this.acompanhamento = acompanhamento;
-		
+
 	}
-	//função para poder realizar o print das informações
-	public String toString () {
-		return "Especificações da batata frita : \nTamanho = "+getTamanho()+"\nDescrição = " +getDescricao()+
-				"\nPreço = "+getPreco()+"\nacompanhamento(s) = "+acompanhamento;
+
+	// função para poder realizar o print das informações
+	@Override
+	public String toString() {
+		return "Especificações da batata frita : \nTamanho = " + getTamanho() + "\nDescrição = " + getDescricao()
+				+ "\nPreço = " + getPreco() + "\nacompanhamento(s) = " + acompanhamento;
 	}
-	
-	
-	//getter e setter da batata frita
+
+	// getter e setter da batata frita
 	public String getAcompanhamento() {
 		return acompanhamento;
 	}

@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
+import model.Comida;
+import model.FrangoEmpanado;
 import view.Alimento;
 import view.CadastraFrango;
 import view.Frango;
@@ -23,10 +25,17 @@ public class FrangoController {
 	public DefaultListModel<String> gerarListaFrango() {
 
 		DefaultListModel<String> model;
-		model = new DefaultListModel<String>();
+		model = new DefaultListModel<>();
 
-		for (int i = 0; i < 3; i++) {
-			model.addElement("Frango Empanado" + i);
+		for (Comida comida : view.getPedido().getItens()) {
+
+			if (comida instanceof FrangoEmpanado) {
+
+				FrangoEmpanado frango = (FrangoEmpanado) comida;
+				model.addElement(frango.getCorteDoFrango());
+
+			}
+
 		}
 
 		return model;
@@ -38,7 +47,7 @@ public class FrangoController {
 
 		if (botaoPressionado == view.getBotaoCadastrarFrango()) {
 
-			new CadastraFrango().setVisible(true);
+			new CadastraFrango(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		}
@@ -57,8 +66,12 @@ public class FrangoController {
 
 		if (botaoPressionado == view.getBotaoVoltar()) {
 
-			new Alimento().setVisible(true);
+			new Alimento(view.getPedido()).setVisible(true);
 			this.view.dispose();
+
+		}
+
+		if (botaoPressionado == view.getBotaoAdicionarFrango()) {
 
 		}
 	}

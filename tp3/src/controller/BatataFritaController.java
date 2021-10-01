@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
+import model.BatataFrita;
+import model.Comida;
 import view.Alimento;
 import view.BatataFritaTela;
 import view.CadastraBatataFrita;
@@ -23,10 +25,17 @@ public class BatataFritaController {
 	public DefaultListModel<String> gerarListaBatataFrita() {
 
 		DefaultListModel<String> model;
-		model = new DefaultListModel<String>();
+		model = new DefaultListModel<>();
 
-		for (int i = 0; i < 3; i++) {
-			model.addElement("Batata Frita" + i);
+		for (Comida comida : view.getPedido().getItens()) {
+
+			if (comida instanceof BatataFrita) {
+
+				BatataFrita batataFrita = (BatataFrita) comida;
+				model.addElement(batataFrita.getAcompanhamento());
+
+			}
+
 		}
 
 		return model;
@@ -38,7 +47,7 @@ public class BatataFritaController {
 
 		if (botaoPressionado == view.getBotaoCadastrarBatataFrita()) {
 
-			new CadastraBatataFrita().setVisible(true);
+			new CadastraBatataFrita(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		}
@@ -57,8 +66,14 @@ public class BatataFritaController {
 
 		if (botaoPressionado == view.getBotaoVoltar()) {
 
-			new Alimento().setVisible(true);
+			new Alimento(view.getPedido()).setVisible(true);
 			this.view.dispose();
+			// new Molho();
+
+		}
+
+		if (botaoPressionado == view.getBotaoAdicionarBatata()) {
+
 			// new Molho();
 
 		}

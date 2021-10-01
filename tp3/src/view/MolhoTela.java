@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 
 import controller.MolhoController;
+import model.Pedido;
 
 public class MolhoTela extends JFrame implements ActionListener {
 
@@ -16,37 +17,44 @@ public class MolhoTela extends JFrame implements ActionListener {
 	private final JButton botaoEditarMolho;
 	private final JButton botaoExcluirMolho;
 	private final JButton botaoVoltar;
+	private final JButton botaoAdicionarMolho;
 	private final JLabel labelMolho;
-	private JList<String> listaMolhos;
+	private final JList<String> listaMolhos;
+	private final Pedido pedido;
 
 	private final MolhoController controllerMolho;
 
-	public MolhoTela() {
+	public MolhoTela(Pedido pedido) {
 
 		super("Molho");
 
+		this.pedido = pedido;
 		this.controllerMolho = new MolhoController(this);
 
 		this.setSize(400, 600);
 		this.setLayout(null);
 
-		listaMolhos = new JList<String>();
+		listaMolhos = new JList<>();
 		listaMolhos.setModel(controllerMolho.gerarListaMolho());
 		listaMolhos.setBounds(10, 40, 350, 200);
 
 		labelMolho = new JLabel("Tela Molho");
 		labelMolho.setBounds(160, 0, 200, 50);
 
+		botaoAdicionarMolho = new JButton("Adicionar");
+		botaoAdicionarMolho.setBounds(250, 360, 100, 60);
+		botaoAdicionarMolho.addActionListener(this);
+
 		botaoCadastrarMolho = new JButton("Cadastrar");
-		botaoCadastrarMolho.setBounds(30, 500, 100, 50);
+		botaoCadastrarMolho.setBounds(30, 270, 100, 60);
 		botaoCadastrarMolho.addActionListener(this);
 
 		botaoEditarMolho = new JButton("Editar");
-		botaoEditarMolho.setBounds(100, 175, 200, 100);
+		botaoEditarMolho.setBounds(30, 360, 100, 60);
 		botaoEditarMolho.addActionListener(this);
 
 		botaoExcluirMolho = new JButton("Excluir");
-		botaoExcluirMolho.setBounds(100, 300, 200, 100);
+		botaoExcluirMolho.setBounds(30, 450, 100, 60);
 		botaoExcluirMolho.addActionListener(this);
 
 		botaoVoltar = new JButton("Voltar");
@@ -54,11 +62,12 @@ public class MolhoTela extends JFrame implements ActionListener {
 		botaoVoltar.addActionListener(this);
 
 		this.add(botaoCadastrarMolho);
-		// this.add(botaoEditarMolho);
-		// this.add(botaoExcluirMolho);
+		this.add(botaoEditarMolho);
+		this.add(botaoExcluirMolho);
 		this.add(labelMolho);
 		this.add(botaoVoltar);
 		this.add(listaMolhos);
+		this.add(botaoAdicionarMolho);
 
 		setVisible(true);
 	}
@@ -83,6 +92,26 @@ public class MolhoTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
+	}
+
+	public JButton getBotaoAdicionarMolho() {
+		return botaoAdicionarMolho;
+	}
+
+	public JList<String> getListaMolhos() {
+		return listaMolhos;
+	}
+
+	public JLabel getLabelMolho() {
+		return labelMolho;
+	}
+
+	public MolhoController getControllerMolho() {
+		return controllerMolho;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
 	}
 
 }

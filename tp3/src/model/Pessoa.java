@@ -14,6 +14,7 @@ public abstract class Pessoa {
 
 	}
 
+	@Override
 	public abstract String toString();
 
 	// getter e setter de nome

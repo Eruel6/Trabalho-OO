@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
+import database.Dados;
+import model.Entregador;
 import view.CadastraEntregador;
 import view.EntregadorTela;
 import view.Menu;
@@ -23,10 +25,10 @@ public class EntregadorController {
 	public DefaultListModel<String> gerarListaEntregadores() {
 
 		DefaultListModel<String> model;
-		model = new DefaultListModel<String>();
+		model = new DefaultListModel<>();
 
-		for (int i = 0; i < 3; i++) {
-			model.addElement("Entregador" + i);
+		for (Entregador element : Dados.getEntregadores()) {
+			model.addElement(element.getNome());
 		}
 
 		return model;

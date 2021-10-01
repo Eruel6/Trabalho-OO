@@ -27,7 +27,7 @@ public class CadastraMolhoController {
 
 		if (botaoPressionado == this.view.getBotaoCancelar()) {
 
-			new MolhoTela().setVisible(true);
+			new MolhoTela(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		} else if (botaoPressionado == this.view.getBotaoSalvarMolho()) {
@@ -40,9 +40,9 @@ public class CadastraMolhoController {
 
 			} else {
 				mensagem.mensagemSucessoCadastro();
-				System.out.println(model);
+				view.getPedido().getItens().add(model);
 
-				new MolhoTela().setVisible(true);
+				new MolhoTela(view.getPedido()).setVisible(true);
 				this.view.dispose();
 			}
 
@@ -59,17 +59,7 @@ public class CadastraMolhoController {
 
 		double precoValidado;
 
-		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G"))) {
-
-			return null;
-
-		}
-		if ((descricao.isBlank())) {
-
-			return null;
-
-		}
-		if (tipo.isBlank()) {
+		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank()) || tipo.isBlank()) {
 			return null;
 		}
 		try {

@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import controller.AlimentosController;
+import model.Pedido;
 
 public class Alimento extends JFrame implements ActionListener {
 
@@ -17,11 +18,13 @@ public class Alimento extends JFrame implements ActionListener {
 	private final JButton botaoVoltar;
 	private final JLabel labelAlimento;
 	private final AlimentosController controllerAlimento;
+	private final Pedido pedido;
 
-	public Alimento() {
+	public Alimento(Pedido pedido) {
 
 		super("Alimento");
 
+		this.pedido = pedido;
 		this.controllerAlimento = new AlimentosController(this);
 
 		this.setSize(400, 600);
@@ -75,6 +78,18 @@ public class Alimento extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
+	}
+
+	public JLabel getLabelAlimento() {
+		return labelAlimento;
+	}
+
+	public AlimentosController getControllerAlimento() {
+		return controllerAlimento;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
 	}
 
 }

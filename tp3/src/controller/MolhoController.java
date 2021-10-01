@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
+import model.Comida;
+import model.Molho;
 import view.Alimento;
 import view.CadastraMolho;
 import view.MolhoTela;
@@ -23,10 +25,17 @@ public class MolhoController {
 	public DefaultListModel<String> gerarListaMolho() {
 
 		DefaultListModel<String> model;
-		model = new DefaultListModel<String>();
+		model = new DefaultListModel<>();
 
-		for (int i = 0; i < 3; i++) {
-			model.addElement("Molho" + i);
+		for (Comida comida : view.getPedido().getItens()) {
+
+			if (comida instanceof Molho) {
+
+				Molho molho = (Molho) comida;
+				model.addElement(molho.getTipo());
+
+			}
+
 		}
 
 		return model;
@@ -38,7 +47,7 @@ public class MolhoController {
 
 		if (botaoPressionado == view.getBotaoCadastrarMolho()) {
 
-			new CadastraMolho().setVisible(true);
+			new CadastraMolho(view.getPedido()).setVisible(true);
 			this.view.dispose();
 
 		}
@@ -56,8 +65,14 @@ public class MolhoController {
 		}
 		if (botaoPressionado == view.getBotaoVoltar()) {
 
-			new Alimento().setVisible(true);
+			new Alimento(view.getPedido()).setVisible(true);
 			this.view.dispose();
+
+			// new Molho();
+
+		}
+
+		if (botaoPressionado == view.getBotaoAdicionarMolho()) {
 
 			// new Molho();
 

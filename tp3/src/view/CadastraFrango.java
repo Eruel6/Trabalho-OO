@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controller.CadastraFrangoController;
+import model.Pedido;
 
 public class CadastraFrango extends JFrame implements ActionListener {
 
@@ -24,11 +25,13 @@ public class CadastraFrango extends JFrame implements ActionListener {
 	private final JTextField descricaoFrango;
 	private final JTextField corteDoFrango;
 	private final CadastraFrangoController controller;
+	private final Pedido pedido;
 
-	public CadastraFrango() {
+	public CadastraFrango(Pedido pedido) {
 
 		super("Informaçãoes Frango");
 
+		this.pedido = pedido;
 		this.controller = new CadastraFrangoController(this);
 
 		this.setSize(400, 600);
@@ -132,6 +135,14 @@ public class CadastraFrango extends JFrame implements ActionListener {
 
 	public JTextField getCorteDoFrango() {
 		return corteDoFrango;
+	}
+
+	public CadastraFrangoController getController() {
+		return controller;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
 	}
 
 }
