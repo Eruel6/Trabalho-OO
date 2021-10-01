@@ -14,6 +14,7 @@ public class Alimento extends JFrame implements ActionListener {
 	private final JButton botaoFrango;
 	private final JButton botaoBatataFrita;
 	private final JButton botaoMolho;
+	private final JButton botaoVoltar;
 	private final JLabel labelAlimento;
 	private final AlimentosController controllerAlimento;
 
@@ -41,10 +42,15 @@ public class Alimento extends JFrame implements ActionListener {
 		botaoMolho.setBounds(100, 300, 200, 100);
 		botaoMolho.addActionListener(this);
 
+		botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(250, 500, 100, 50);
+		botaoVoltar.addActionListener(this);
+
 		this.add(botaoFrango);
 		this.add(botaoBatataFrita);
 		this.add(botaoMolho);
 		this.add(labelAlimento);
+		this.add(botaoVoltar);
 
 		setVisible(true);
 	}
@@ -65,6 +71,10 @@ public class Alimento extends JFrame implements ActionListener {
 
 	public JButton getBotaoMolho() {
 		return botaoMolho;
+	}
+
+	public JButton getBotaoVoltar() {
+		return botaoVoltar;
 	}
 
 }

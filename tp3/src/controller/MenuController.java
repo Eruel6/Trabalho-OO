@@ -28,23 +28,27 @@ public class MenuController {
 		if (botaoPressionado == view.getBotaoPedido()) {
 
 			new Pedidos();
+			// this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoAlimento()) {
 
 			new Alimento();
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoCliente()) {
 
 			new ClienteTela();
+			this.view.dispose();
 
 		}
 		if (botaoPressionado == view.getBotaoEntregador()) {
 
 			new EntregadorTela();
+			this.view.dispose();
 
 		}
 	}

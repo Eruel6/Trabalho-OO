@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 
 import controller.BatataFritaController;
 
@@ -14,7 +15,9 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 	private final JButton botaoCadastrarBatataFrita;
 	private final JButton botaoEditarBatataFrita;
 	private final JButton botaoExcluirBatataFrita;
+	private final JButton botaoVoltar;
 	private final JLabel labelBatataFrita;
+	private JList<String> listaBatatas;
 
 	private final BatataFritaController controllerBatataFrita;
 
@@ -27,11 +30,15 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 		this.setSize(400, 600);
 		this.setLayout(null);
 
+		listaBatatas = new JList<String>();
+		listaBatatas.setModel(controllerBatataFrita.gerarListaBatataFrita());
+		listaBatatas.setBounds(10, 40, 350, 200);
+
 		labelBatataFrita = new JLabel("Tela BatataFrita");
 		labelBatataFrita.setBounds(160, 0, 200, 50);
 
 		botaoCadastrarBatataFrita = new JButton("Cadastrar");
-		botaoCadastrarBatataFrita.setBounds(100, 50, 200, 100);
+		botaoCadastrarBatataFrita.setBounds(30, 500, 100, 50);
 		botaoCadastrarBatataFrita.addActionListener(this);
 
 		botaoEditarBatataFrita = new JButton("Editar");
@@ -42,10 +49,16 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 		botaoExcluirBatataFrita.setBounds(100, 300, 200, 100);
 		botaoExcluirBatataFrita.addActionListener(this);
 
+		botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(250, 500, 100, 50);
+		botaoVoltar.addActionListener(this);
+
 		this.add(botaoCadastrarBatataFrita);
-		this.add(botaoEditarBatataFrita);
-		this.add(botaoExcluirBatataFrita);
+		// this.add(botaoEditarBatataFrita);
+		// this.add(botaoExcluirBatataFrita);
 		this.add(labelBatataFrita);
+		this.add(botaoVoltar);
+		this.add(listaBatatas);
 
 		setVisible(true);
 	}
@@ -66,6 +79,10 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoExcluirBatataFrita() {
 		return botaoExcluirBatataFrita;
+	}
+
+	public JButton getBotaoVoltar() {
+		return botaoVoltar;
 	}
 
 }

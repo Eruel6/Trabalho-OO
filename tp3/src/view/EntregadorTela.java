@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 
 import controller.EntregadorController;
 
@@ -14,7 +15,9 @@ public class EntregadorTela extends JFrame implements ActionListener {
 	private final JButton botaoCadastrarEntregador;
 	private final JButton botaoEditarEntregador;
 	private final JButton botaoExcluirEntregador;
+	private final JButton botaoVoltar;
 	private final JLabel labelEntregador;
+	private JList<String> listaEntregadores;
 
 	private final EntregadorController controllerEntregador;
 
@@ -27,11 +30,15 @@ public class EntregadorTela extends JFrame implements ActionListener {
 		this.setSize(400, 600);
 		this.setLayout(null);
 
+		listaEntregadores = new JList<String>();
+		listaEntregadores.setModel(controllerEntregador.gerarListaEntregadores());
+		listaEntregadores.setBounds(10, 40, 350, 200);
+
 		labelEntregador = new JLabel("Tela Entregadores");
 		labelEntregador.setBounds(160, 0, 200, 50);
 
 		botaoCadastrarEntregador = new JButton("Cadastrar");
-		botaoCadastrarEntregador.setBounds(100, 50, 200, 100);
+		botaoCadastrarEntregador.setBounds(30, 500, 100, 50);
 		botaoCadastrarEntregador.addActionListener(this);
 
 		botaoEditarEntregador = new JButton("Editar");
@@ -42,10 +49,16 @@ public class EntregadorTela extends JFrame implements ActionListener {
 		botaoExcluirEntregador.setBounds(100, 300, 200, 100);
 		botaoExcluirEntregador.addActionListener(this);
 
+		botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(250, 500, 100, 50);
+		botaoVoltar.addActionListener(this);
+
 		this.add(botaoCadastrarEntregador);
-		this.add(botaoEditarEntregador);
-		this.add(botaoExcluirEntregador);
+		// this.add(botaoEditarEntregador);
+		// this.add(botaoExcluirEntregador);
 		this.add(labelEntregador);
+		this.add(botaoVoltar);
+		this.add(listaEntregadores);
 
 		setVisible(true);
 	}
@@ -66,6 +79,10 @@ public class EntregadorTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoExcluirEntregador() {
 		return botaoExcluirEntregador;
+	}
+
+	public JButton getBotaoVoltar() {
+		return botaoVoltar;
 	}
 
 }

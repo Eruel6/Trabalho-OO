@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import view.Alimento;
 import view.BatataFritaTela;
 import view.Frango;
+import view.Menu;
 import view.MolhoTela;
 
 public class AlimentosController {
@@ -42,6 +43,12 @@ public class AlimentosController {
 			new MolhoTela();
 			this.view.dispose();
 
+		}
+
+		if (botaoPressionado == view.getBotaoVoltar()) {
+
+			new Menu().setVisible(true);
+			this.view.dispose();
 		}
 	}
 }

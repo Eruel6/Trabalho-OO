@@ -12,6 +12,7 @@ public class Pedidos extends JFrame implements ActionListener {
 	private final JButton botaoCadastrarPedido;
 	private final JButton botaoEditarPedido;
 	private final JButton botaoExcluirPedido;
+	private final JButton botaoVoltar;
 	private final JLabel labelPedido;
 
 	public Pedidos() {
@@ -36,10 +37,15 @@ public class Pedidos extends JFrame implements ActionListener {
 		botaoExcluirPedido.setBounds(100, 300, 200, 100);
 		botaoExcluirPedido.addActionListener(this);
 
+		botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(250, 500, 100, 50);
+		botaoVoltar.addActionListener(this);
+
 		this.add(botaoCadastrarPedido);
 		this.add(botaoEditarPedido);
 		this.add(botaoExcluirPedido);
 		this.add(labelPedido);
+		this.add(botaoVoltar);
 
 		setVisible(true);
 	}
@@ -62,4 +68,7 @@ public class Pedidos extends JFrame implements ActionListener {
 
 	}
 
+	public JButton getBotaoVoltar() {
+		return botaoVoltar;
+	}
 }

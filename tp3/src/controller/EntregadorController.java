@@ -2,10 +2,12 @@ package controller;
 
 import java.awt.event.ActionEvent;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
 import view.CadastraEntregador;
 import view.EntregadorTela;
+import view.Menu;
 
 public class EntregadorController {
 
@@ -18,6 +20,18 @@ public class EntregadorController {
 
 	}
 
+	public DefaultListModel<String> gerarListaEntregadores() {
+
+		DefaultListModel<String> model;
+		model = new DefaultListModel<String>();
+
+		for (int i = 0; i < 3; i++) {
+			model.addElement("Entregador" + i);
+		}
+
+		return model;
+	}
+
 	public void pressionarBotaoEntregador(ActionEvent e) {
 
 		JButton botaoPressionado = (JButton) e.getSource();
@@ -25,6 +39,7 @@ public class EntregadorController {
 		if (botaoPressionado == view.getBotaoCadastrarEntragador()) {
 
 			new CadastraEntregador();
+			this.view.dispose();
 
 		}
 
@@ -36,6 +51,14 @@ public class EntregadorController {
 
 		if (botaoPressionado == view.getBotaoExcluirEntregador()) {
 
+			// new Molho();
+
+		}
+
+		if (botaoPressionado == view.getBotaoVoltar()) {
+
+			new Menu().setVisible(true);
+			this.view.dispose();
 			// new Molho();
 
 		}
