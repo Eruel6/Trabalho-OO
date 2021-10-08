@@ -10,6 +10,7 @@ import model.Comida;
 import view.Alimento;
 import view.BatataFritaTela;
 import view.CadastraBatataFrita;
+import view.EditaBatataFrita;
 
 public class BatataFritaController {
 
@@ -54,14 +55,19 @@ public class BatataFritaController {
 
 		if (botaoPressionado == view.getBotaoEditarBatataFrita()) {
 
-			// new BatataFrita();
+			int selectedIndex = view.getListaBatatas().getSelectedIndex();
+			BatataFrita batataSelecionada = (BatataFrita) view.getPedido().getItens().get(selectedIndex);
+			new EditaBatataFrita(batataSelecionada, view.getPedido()).setVisible(true);
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoExcluirBatataFrita()) {
 
-			// new Molho();
-
+			int selectedIndex = view.getListaBatatas().getSelectedIndex();
+			view.getPedido().getItens().remove(selectedIndex);
+			new BatataFritaTela(view.getPedido()).setVisible(true);
+			this.view.dispose();
 		}
 
 		if (botaoPressionado == view.getBotaoVoltar()) {
@@ -72,10 +78,5 @@ public class BatataFritaController {
 
 		}
 
-		if (botaoPressionado == view.getBotaoAdicionarBatata()) {
-
-			// new Molho();
-
-		}
 	}
 }

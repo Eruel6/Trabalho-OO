@@ -14,8 +14,6 @@ import model.Cliente;
 public class Pedidos extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarPedido;
-	private final JButton botaoEditarPedido;
-	private final JButton botaoExcluirPedido;
 	private final JButton botaoVoltar;
 	private final JButton botaoCriarPedido;
 	private final JLabel labelPedido;
@@ -41,28 +39,17 @@ public class Pedidos extends JFrame implements ActionListener {
 		labelPedido.setBounds(160, 0, 200, 50);
 
 		botaoCadastrarPedido = new JButton("Realizar Pedido");
-		botaoCadastrarPedido.setBounds(10, 500, 120, 50);
+		botaoCadastrarPedido.setBounds(10, 500, 200, 50);
 		botaoCadastrarPedido.addActionListener(this);
 
 		botaoCriarPedido = new JButton("Criar Pedido");
-		botaoCriarPedido.setBounds(140, 500, 100, 50);
+		botaoCriarPedido.setBounds(10, 400, 200, 50);
 		botaoCriarPedido.addActionListener(this);
-
-		botaoEditarPedido = new JButton("Editar Pedido");
-		botaoEditarPedido.setBounds(100, 175, 200, 100);
-		botaoEditarPedido.addActionListener(this);
-
-		botaoExcluirPedido = new JButton("Excluir Pedido");
-		botaoExcluirPedido.setBounds(100, 300, 200, 100);
-		botaoExcluirPedido.addActionListener(this);
 
 		botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(250, 500, 100, 50);
 		botaoVoltar.addActionListener(this);
 
-		this.add(botaoCadastrarPedido);
-		// this.add(botaoEditarPedido);
-		// this.add(botaoExcluirPedido);
 		this.add(labelPedido);
 		this.add(botaoVoltar);
 		this.add(listaPedidos);
@@ -80,14 +67,6 @@ public class Pedidos extends JFrame implements ActionListener {
 
 	public JButton getBotaoCadastrarPedido() {
 		return botaoCadastrarPedido;
-	}
-
-	public JButton getBotaoEditarPedido() {
-		return botaoEditarPedido;
-	}
-
-	public JButton getBotaoExcluirPedido() {
-		return botaoExcluirPedido;
 	}
 
 	public JButton getBotaoVoltar() {

@@ -19,4 +19,19 @@ public class Mensagens {
 
 	}
 
+	public void mensagemSucessoEdicao() {
+
+		JOptionPane.showMessageDialog(null, "Os dados foram salvos com sucesso!", null,
+				JOptionPane.INFORMATION_MESSAGE);
+
+	}
+
+	public void mensagemErroEdicao() {
+
+		JOptionPane.showMessageDialog(null,
+				"Erro ao editar os dados!\n " + "Por favor verifique os dados inserido e tente outra vez", null,
+				JOptionPane.ERROR_MESSAGE);
+
+	}
+
 }

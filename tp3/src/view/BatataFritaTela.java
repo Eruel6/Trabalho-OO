@@ -17,7 +17,6 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 	private final JButton botaoEditarBatataFrita;
 	private final JButton botaoExcluirBatataFrita;
 	private final JButton botaoVoltar;
-	private final JButton botaoAdicionarBatata;
 	private final JLabel labelBatataFrita;
 	private final JList<String> listaBatatas;
 	private final Pedido pedido;
@@ -41,10 +40,6 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 		labelBatataFrita = new JLabel("Tela BatataFrita");
 		labelBatataFrita.setBounds(160, 0, 200, 50);
 
-		botaoAdicionarBatata = new JButton("Adicionar");
-		botaoAdicionarBatata.setBounds(250, 360, 100, 60);
-		botaoAdicionarBatata.addActionListener(this);
-
 		botaoCadastrarBatataFrita = new JButton("Cadastrar");
 		botaoCadastrarBatataFrita.setBounds(30, 270, 100, 60);
 		botaoCadastrarBatataFrita.addActionListener(this);
@@ -67,7 +62,6 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 		this.add(labelBatataFrita);
 		this.add(botaoVoltar);
 		this.add(listaBatatas);
-		this.add(botaoAdicionarBatata);
 
 		setVisible(true);
 	}
@@ -92,10 +86,6 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
-	}
-
-	public JButton getBotaoAdicionarBatata() {
-		return botaoAdicionarBatata;
 	}
 
 	public JList<String> getListaBatatas() {

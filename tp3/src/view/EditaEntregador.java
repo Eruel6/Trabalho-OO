@@ -8,11 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.CadastraEntregadorController;
+import controller.EditaEntregadorController;
+import model.Entregador;
 
-public class CadastraEntregador extends JFrame implements ActionListener {
-
-	private final CadastraEntregadorController controller;
+public class EditaEntregador extends JFrame implements ActionListener {
 
 //	-------------------Labels Entregador
 	private final JButton botaoSalvarEntregador;
@@ -42,68 +41,77 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 	private final JTextField agenciaContaEntregador;
 	private final JTextField numeroContaEntregador;
 
-	public CadastraEntregador() {
+	private final EditaEntregadorController controller;
+	private final Entregador entregador;
 
-		super("Informaçãoes Entregador");
+	public EditaEntregador(Entregador entregador) {
 
-		this.controller = new CadastraEntregadorController(this);
+		super("Informaçãoes Clientes");
 
+		String notaCorreta;
+
+		// controller = new CadastraClienteController(this);
+
+		this.controller = new EditaEntregadorController(this);
+		this.entregador = entregador;
 		this.setSize(400, 600);
 		this.setLayout(null);
 
-		labelTela = new JLabel("Tela Cadastro Entregador");
+		notaCorreta = entregador.getNota() + "";
+
+		labelTela = new JLabel("Tela Edição Entregador");
 		labelTela.setBounds(10, 0, 200, 50);
 
 		labelNomeEntregador = new JLabel("Nome do entregador");
 		labelNomeEntregador.setBounds(10, 50, 200, 50);
 
-		nomeEntregador = new JTextField(200);
+		nomeEntregador = new JTextField(entregador.getNome());
 		nomeEntregador.setBounds(150, 60, 200, 30);
 
 		labelEnderecoEntregador = new JLabel("Endereco do entregador");
 		labelEnderecoEntregador.setBounds(10, 100, 200, 50);
 
-		enderecoEntregador = new JTextField(200);
+		enderecoEntregador = new JTextField(entregador.getEndereco());
 		enderecoEntregador.setBounds(150, 110, 200, 30);
 
 		labelCpfEntregador = new JLabel("CPF do entregador");
 		labelCpfEntregador.setBounds(10, 150, 200, 50);
 
-		cpfEntregador = new JTextField(200);
+		cpfEntregador = new JTextField(entregador.getCpf());
 		cpfEntregador.setBounds(150, 160, 200, 30);
 
 		labelModalidadeEntregador = new JLabel("Modalidade");
 		labelModalidadeEntregador.setBounds(10, 200, 200, 50);
 
-		modalidadeEntregador = new JTextField(200);
+		modalidadeEntregador = new JTextField(entregador.getModalidade());
 		modalidadeEntregador.setBounds(150, 210, 200, 30);
 
 		labelNotaEntregador = new JLabel("Nota");
 		labelNotaEntregador.setBounds(10, 250, 200, 50);
 
-		notaEntregador = new JTextField(200);
+		notaEntregador = new JTextField(notaCorreta);
 		notaEntregador.setBounds(150, 260, 200, 30);
 
-//		AQUI DIVIDEEDEEEEEEEEEE
+//		SCATMAN'S WORLD
 		labelContaEntregador = new JLabel("Dados da conta Bancaria do entregador");
 		labelContaEntregador.setBounds(10, 300, 400, 50);
 
 		labelBancoContaEntregador = new JLabel("Banco");
 		labelBancoContaEntregador.setBounds(10, 350, 200, 50);
 
-		bancoContaEntregador = new JTextField(200);
+		bancoContaEntregador = new JTextField(entregador.getConta().getBanco());
 		bancoContaEntregador.setBounds(150, 360, 200, 30);
 
 		labelAgenciaContaEntregador = new JLabel("Agencia");
 		labelAgenciaContaEntregador.setBounds(10, 400, 200, 50);
 
-		agenciaContaEntregador = new JTextField(200);
+		agenciaContaEntregador = new JTextField(entregador.getConta().getAgencia() + "");
 		agenciaContaEntregador.setBounds(150, 410, 200, 30);
 
 		labelNumeroContaEntregador = new JLabel("Número da Conta");
 		labelNumeroContaEntregador.setBounds(10, 450, 200, 50);
 
-		numeroContaEntregador = new JTextField(200);
+		numeroContaEntregador = new JTextField(entregador.getConta().getConta());
 		numeroContaEntregador.setBounds(150, 460, 200, 30);
 
 		botaoSalvarEntregador = new JButton("Salvar");
@@ -141,7 +149,6 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
 		controller.pressionarBotaoEntregador(e);
 
 	}
@@ -224,6 +231,14 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 
 	public JTextField getNumeroContaEntregador() {
 		return numeroContaEntregador;
+	}
+
+	public EditaEntregadorController getController() {
+		return controller;
+	}
+
+	public Entregador getEntregador() {
+		return entregador;
 	}
 
 }

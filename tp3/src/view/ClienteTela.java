@@ -7,13 +7,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 //import model.Cliente;
 import controller.ClienteController;
 
-public class ClienteTela extends JFrame implements ActionListener, ListSelectionListener {
+public class ClienteTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarCliente;
 	private final JButton botaoEditarCliente;
@@ -21,7 +19,7 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 	private final JButton botaoVoltar;
 	private final JButton botaoPedido;
 	private final JLabel labelCliente;
-	private JList<String> listaClientes;
+	private final JList<String> listaClientes;
 
 	private final ClienteController controllerCliente;
 
@@ -37,7 +35,6 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 		listaClientes = new JList<>();
 		listaClientes.setModel(controllerCliente.gerarListaCliente());
 		listaClientes.setBounds(10, 40, 350, 200);
-		listaClientes.addListSelectionListener(this);
 
 		labelCliente = new JLabel("Tela Clientes");
 		labelCliente.setBounds(160, 0, 200, 50);
@@ -79,15 +76,6 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 
 	}
 
-	@Override
-	public void valueChanged(ListSelectionEvent e) {
-		Object src = e.getSource();
-		if (e.getValueIsAdjusting() && src == listaClientes) {
-
-		}
-
-	}
-
 	public JButton getBotaoCadastrarCliente() {
 		return botaoCadastrarCliente;
 	}
@@ -112,8 +100,12 @@ public class ClienteTela extends JFrame implements ActionListener, ListSelection
 		return listaClientes;
 	}
 
-	public void setListaClientes(JList<String> listaClientes) {
-		this.listaClientes = listaClientes;
+	public JLabel getLabelCliente() {
+		return labelCliente;
+	}
+
+	public ClienteController getControllerCliente() {
+		return controllerCliente;
 	}
 
 }

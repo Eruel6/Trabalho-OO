@@ -9,6 +9,7 @@ import database.Dados;
 import model.Cliente;
 import view.CadastraCliente;
 import view.ClienteTela;
+import view.EditaCliente;
 import view.Menu;
 import view.Pedidos;
 
@@ -48,13 +49,19 @@ public class ClienteController {
 
 		if (botaoPressionado == view.getBotaoEditarCliente()) {
 
-			// new BatataFrita();
+			int selectedIndex = view.getListaClientes().getSelectedIndex();
+			Cliente clienteSelecionado = Dados.getClientes().get(selectedIndex);
+			new EditaCliente(clienteSelecionado);
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoExcluirCliente()) {
 
-			// remove(pressionarBotaoListaCliente(e));
+			int selectedIndex = view.getListaClientes().getSelectedIndex();
+			Dados.getClientes().remove(selectedIndex);
+			new ClienteTela().setVisible(true);
+			this.view.dispose();
 
 		}
 

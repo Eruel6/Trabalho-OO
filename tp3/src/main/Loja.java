@@ -80,10 +80,10 @@ public class Loja {
 		minhaLoja.getClientes().get(0).getPedidos().get(0)
 				.add(new FrangoEmpanado('P', "Um delicioso Frango", 17.87, "Peito"));
 
-		/*
-		 * System.out.println(minhaLoja); System.out.println();
-		 * System.out.println(minhaLoja.consultaPedido(1)); System.out.println();
-		 * System.out.println(minhaLoja.consultaEntregador("Kléber II"));
-		 */
+//		System.out.println(minhaLoja);
+//		System.out.println();
+//		System.out.println(minhaLoja.consultaPedido(1));
+//		System.out.println();
+//		System.out.println(minhaLoja.consultaEntregador("Kléber II"));
 	}
 }

@@ -29,12 +29,12 @@ public class ContaBancaria {
 	}
 
 	// getter e setter de agência
-	public int getAgnecia() {
+	public int getAgencia() {
 		return agencia;
 	}
 
-	public void setAgnecia(int agnecia) {
-		this.agencia = agnecia;
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
 	}
 
 	// getter e setter de conta

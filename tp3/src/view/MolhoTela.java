@@ -17,7 +17,6 @@ public class MolhoTela extends JFrame implements ActionListener {
 	private final JButton botaoEditarMolho;
 	private final JButton botaoExcluirMolho;
 	private final JButton botaoVoltar;
-	private final JButton botaoAdicionarMolho;
 	private final JLabel labelMolho;
 	private final JList<String> listaMolhos;
 	private final Pedido pedido;
@@ -41,10 +40,6 @@ public class MolhoTela extends JFrame implements ActionListener {
 		labelMolho = new JLabel("Tela Molho");
 		labelMolho.setBounds(160, 0, 200, 50);
 
-		botaoAdicionarMolho = new JButton("Adicionar");
-		botaoAdicionarMolho.setBounds(250, 360, 100, 60);
-		botaoAdicionarMolho.addActionListener(this);
-
 		botaoCadastrarMolho = new JButton("Cadastrar");
 		botaoCadastrarMolho.setBounds(30, 270, 100, 60);
 		botaoCadastrarMolho.addActionListener(this);
@@ -67,7 +62,6 @@ public class MolhoTela extends JFrame implements ActionListener {
 		this.add(labelMolho);
 		this.add(botaoVoltar);
 		this.add(listaMolhos);
-		this.add(botaoAdicionarMolho);
 
 		setVisible(true);
 	}
@@ -92,10 +86,6 @@ public class MolhoTela extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
-	}
-
-	public JButton getBotaoAdicionarMolho() {
-		return botaoAdicionarMolho;
 	}
 
 	public JList<String> getListaMolhos() {

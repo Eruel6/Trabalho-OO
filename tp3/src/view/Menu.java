@@ -12,8 +12,6 @@ import controller.MenuController;
 
 public class Menu extends JFrame implements ActionListener {
 
-	private final JButton botaoPedido;
-	private final JButton botaoAlimento;
 	private final JButton botaoCliente;
 	private final JButton botaoEntregador;
 	private final JLabel menuLabel;
@@ -30,14 +28,6 @@ public class Menu extends JFrame implements ActionListener {
 		menuLabel = new JLabel("BEM VINDO !");
 		menuLabel.setBounds(160, 0, 200, 50);
 
-		botaoPedido = new JButton("Pedido");
-		botaoPedido.setBounds(100, 50, 200, 100);
-		botaoPedido.addActionListener(this);
-
-		botaoAlimento = new JButton("Alimento");
-		botaoAlimento.setBounds(100, 175, 200, 100);
-		botaoAlimento.addActionListener(this);
-
 		botaoCliente = new JButton("Cliente");
 		botaoCliente.setBounds(100, 75, 200, 150);
 		botaoCliente.addActionListener(this);
@@ -46,8 +36,6 @@ public class Menu extends JFrame implements ActionListener {
 		botaoEntregador.setBounds(100, 300, 200, 150);
 		botaoEntregador.addActionListener(this);
 
-		// this.add(botaoPedido);
-		// this.add(botaoAlimento);
 		this.add(botaoCliente);
 		this.add(botaoEntregador);
 		this.add(menuLabel);
@@ -60,14 +48,6 @@ public class Menu extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		this.controller.pressionarBotao(e);
 
-	}
-
-	public JButton getBotaoPedido() {
-		return botaoPedido;
-	}
-
-	public JButton getBotaoAlimento() {
-		return botaoAlimento;
 	}
 
 	public JButton getBotaoCliente() {

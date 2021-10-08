@@ -8,9 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import controller.CadastraClienteController;
+import controller.EditaClienteController;
+import model.Cliente;
 
-public class CadastraCliente extends JFrame implements ActionListener {
+public class EditaCliente extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarCliente;
 	private final JButton botaoCancelar;
@@ -19,46 +20,50 @@ public class CadastraCliente extends JFrame implements ActionListener {
 	private final JLabel labelEndereco;
 	private final JLabel labelCpf;
 	private final JLabel labelTelefone;
-	private JTextField nomeCliente;
-	private JTextField enderecoCliente;
-	private JTextField cpfCliente;
-	private JTextField telefoneCliente;
-	private final CadastraClienteController controller;
+	private final JTextField nomeCliente;
+	private final JTextField enderecoCliente;
+	private final JTextField cpfCliente;
+	private final JTextField telefoneCliente;
+	private final Cliente cliente;
+	private final EditaClienteController controller;
+	// private final CadastraClienteController controller;
 
-	public CadastraCliente() {
+	public EditaCliente(Cliente cliente) {
 
 		super("Informaçãoes Clientes");
 
-		controller = new CadastraClienteController(this);
+		// controller = new CadastraClienteController(this);
 
+		this.controller = new EditaClienteController(this);
+		this.cliente = cliente;
 		this.setSize(400, 600);
 		this.setLayout(null);
 
-		labelTela = new JLabel("Tela Cadastro Cliente");
+		labelTela = new JLabel("Tela Edição Cliente");
 		labelTela.setBounds(10, 0, 200, 50);
 
 		labelNome = new JLabel("Nome do cliente");
 		labelNome.setBounds(10, 50, 200, 50);
 
-		nomeCliente = new JTextField(200);
+		nomeCliente = new JTextField(cliente.getNome());
 		nomeCliente.setBounds(150, 60, 200, 30);
 
 		labelEndereco = new JLabel("Endereco do cliente");
 		labelEndereco.setBounds(10, 100, 200, 50);
 
-		enderecoCliente = new JTextField(200);
+		enderecoCliente = new JTextField(cliente.getEndereco());
 		enderecoCliente.setBounds(150, 110, 200, 30);
 
 		labelCpf = new JLabel("CPF do Cliente");
 		labelCpf.setBounds(10, 150, 200, 50);
 
-		cpfCliente = new JTextField(200);
+		cpfCliente = new JTextField(cliente.getCpf());
 		cpfCliente.setBounds(150, 160, 200, 30);
 
 		labelTelefone = new JLabel("Telefone do Cliente");
 		labelTelefone.setBounds(10, 200, 200, 50);
 
-		telefoneCliente = new JTextField(200);
+		telefoneCliente = new JTextField(cliente.getTelefone());
 		telefoneCliente.setBounds(150, 210, 200, 30);
 
 		botaoSalvarCliente = new JButton("Salvar");
@@ -86,7 +91,6 @@ public class CadastraCliente extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
 		controller.pressionarBotaoCliente(e);
 
 	}
@@ -135,8 +139,8 @@ public class CadastraCliente extends JFrame implements ActionListener {
 		return telefoneCliente;
 	}
 
-	public CadastraClienteController getController() {
-		return controller;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
 }

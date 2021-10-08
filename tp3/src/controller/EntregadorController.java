@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import database.Dados;
 import model.Entregador;
 import view.CadastraEntregador;
+import view.EditaEntregador;
 import view.EntregadorTela;
 import view.Menu;
 
@@ -38,7 +39,7 @@ public class EntregadorController {
 
 		JButton botaoPressionado = (JButton) e.getSource();
 
-		if (botaoPressionado == view.getBotaoCadastrarEntragador()) {
+		if (botaoPressionado == view.getBotaoCadastrarEntregador()) {
 
 			new CadastraEntregador();
 			this.view.dispose();
@@ -47,14 +48,18 @@ public class EntregadorController {
 
 		if (botaoPressionado == view.getBotaoEditarEntregador()) {
 
-			// new BatataFrita();
-
+			int selectedIndex = view.getListaEntregadores().getSelectedIndex();
+			Entregador entregadorSelecionado = Dados.getEntregadores().get(selectedIndex);
+			new EditaEntregador(entregadorSelecionado);
+			this.view.dispose();
 		}
 
 		if (botaoPressionado == view.getBotaoExcluirEntregador()) {
 
-			// new Molho();
-
+			int selectedIndex = view.getListaEntregadores().getSelectedIndex();
+			Dados.getEntregadores().remove(selectedIndex);
+			new EntregadorTela().setVisible(true);
+			this.view.dispose();
 		}
 
 		if (botaoPressionado == view.getBotaoVoltar()) {

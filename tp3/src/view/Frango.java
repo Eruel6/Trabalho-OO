@@ -17,7 +17,6 @@ public class Frango extends JFrame implements ActionListener {
 	private final JButton botaoEditarFrango;
 	private final JButton botaoExcluirFrango;
 	private final JButton botaoVoltar;
-	private final JButton botaoAdicionarFrango;
 	private final JLabel labelFrango;
 	private final FrangoController controllerFrango;
 	private final JList<String> listaFrangos;
@@ -39,10 +38,6 @@ public class Frango extends JFrame implements ActionListener {
 
 		labelFrango = new JLabel("Tela Frango");
 		labelFrango.setBounds(160, 0, 200, 50);
-
-		botaoAdicionarFrango = new JButton("Adicionar");
-		botaoAdicionarFrango.setBounds(250, 360, 100, 60);
-		botaoAdicionarFrango.addActionListener(this);
 
 		botaoCadastrarFrango = new JButton("Cadastrar");
 		botaoCadastrarFrango.setBounds(30, 270, 100, 60);
@@ -66,7 +61,6 @@ public class Frango extends JFrame implements ActionListener {
 		this.add(labelFrango);
 		this.add(botaoVoltar);
 		this.add(listaFrangos);
-		this.add(botaoAdicionarFrango);
 
 		setVisible(true);
 	}
@@ -91,10 +85,6 @@ public class Frango extends JFrame implements ActionListener {
 
 	public JButton getBotaoVoltar() {
 		return botaoVoltar;
-	}
-
-	public JButton getBotaoAdicionarFrango() {
-		return botaoAdicionarFrango;
 	}
 
 	public JList<String> getListaFrangos() {

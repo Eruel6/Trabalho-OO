@@ -9,6 +9,7 @@ import model.Comida;
 import model.Molho;
 import view.Alimento;
 import view.CadastraMolho;
+import view.EditaMolho;
 import view.MolhoTela;
 
 public class MolhoController {
@@ -54,14 +55,19 @@ public class MolhoController {
 
 		if (botaoPressionado == view.getBotaoEditarMolho()) {
 
-			// new BatataFrita();
+			int selectedIndex = view.getListaMolhos().getSelectedIndex();
+			Molho molhoSelecionado = (Molho) view.getPedido().getItens().get(selectedIndex);
+			new EditaMolho(molhoSelecionado, view.getPedido()).setVisible(true);
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoExcluirMolho()) {
 
-			// new Molho();
-
+			int selectedIndex = view.getListaMolhos().getSelectedIndex();
+			view.getPedido().getItens().remove(selectedIndex);
+			new MolhoTela(view.getPedido()).setVisible(true);
+			this.view.dispose();
 		}
 		if (botaoPressionado == view.getBotaoVoltar()) {
 
@@ -72,10 +78,5 @@ public class MolhoController {
 
 		}
 
-		if (botaoPressionado == view.getBotaoAdicionarMolho()) {
-
-			// new Molho();
-
-		}
 	}
 }

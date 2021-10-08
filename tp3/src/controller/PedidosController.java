@@ -57,18 +57,6 @@ public class PedidosController {
 			this.view.dispose();
 		}
 
-		if (botaoPressionado == view.getBotaoEditarPedido()) {
-
-			// new BatataFrita();
-
-		}
-
-		if (botaoPressionado == view.getBotaoExcluirPedido()) {
-
-			// new Molho();
-
-		}
-
 		if (botaoPressionado == view.getBotaoVoltar()) {
 
 			new ClienteTela().setVisible(true);

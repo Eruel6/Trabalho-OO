@@ -69,7 +69,7 @@ public class EntregadorTela extends JFrame implements ActionListener {
 
 	}
 
-	public JButton getBotaoCadastrarEntragador() {
+	public JButton getBotaoCadastrarEntregador() {
 		return botaoCadastrarEntregador;
 	}
 
@@ -91,6 +91,14 @@ public class EntregadorTela extends JFrame implements ActionListener {
 
 	public void setListaEntregadores(JList<String> listaEntregadores) {
 		this.listaEntregadores = listaEntregadores;
+	}
+
+	public JLabel getLabelEntregador() {
+		return labelEntregador;
+	}
+
+	public EntregadorController getControllerEntregador() {
+		return controllerEntregador;
 	}
 
 }

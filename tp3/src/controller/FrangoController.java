@@ -9,6 +9,7 @@ import model.Comida;
 import model.FrangoEmpanado;
 import view.Alimento;
 import view.CadastraFrango;
+import view.EditaFrango;
 import view.Frango;
 
 public class FrangoController {
@@ -54,13 +55,19 @@ public class FrangoController {
 
 		if (botaoPressionado == view.getBotaoEditarFrango()) {
 
-			// new BatataFrita();
+			int selectedIndex = view.getListaFrangos().getSelectedIndex();
+			FrangoEmpanado frangoSelecionado = (FrangoEmpanado) view.getPedido().getItens().get(selectedIndex);
+			new EditaFrango(frangoSelecionado, view.getPedido()).setVisible(true);
+			this.view.dispose();
 
 		}
 
 		if (botaoPressionado == view.getBotaoExcluirFrango()) {
 
-			// new Molho();
+			int selectedIndex = view.getListaFrangos().getSelectedIndex();
+			view.getPedido().getItens().remove(selectedIndex);
+			new Frango(view.getPedido()).setVisible(true);
+			this.view.dispose();
 
 		}
 
@@ -71,9 +78,6 @@ public class FrangoController {
 
 		}
 
-		if (botaoPressionado == view.getBotaoAdicionarFrango()) {
-
-		}
 	}
 
 //	public InserirEditarFrango() {
