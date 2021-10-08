@@ -11,6 +11,14 @@ import javax.swing.JTextField;
 import controller.EditaClienteController;
 import model.Cliente;
 
+/**
+ * Parametros para a tela de edição de um cliente, onde será inserido as
+ * informações que deseja editar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class EditaCliente extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarCliente;
@@ -26,13 +34,18 @@ public class EditaCliente extends JFrame implements ActionListener {
 	private final JTextField telefoneCliente;
 	private final Cliente cliente;
 	private final EditaClienteController controller;
-	// private final CadastraClienteController controller;
+
+	/**
+	 * Construtor para a tela de edição de um cliente, os campos devem vir
+	 * preenchidos com as informações que foram cadastradas pelo usuario
+	 * anteriormente e podem ou não serem editadas.
+	 * 
+	 * @param cliente
+	 */
 
 	public EditaCliente(Cliente cliente) {
 
 		super("Informaçãoes Clientes");
-
-		// controller = new CadastraClienteController(this);
 
 		this.controller = new EditaClienteController(this);
 		this.cliente = cliente;
@@ -88,6 +101,10 @@ public class EditaCliente extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de edição de um cliente.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

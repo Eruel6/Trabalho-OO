@@ -11,9 +11,22 @@ import view.CadastraPedido;
 import view.ClienteTela;
 import view.Pedidos;
 
+/**
+ * Controlador da tela de pedidos, onde será realizado o CRUD de pedido.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class PedidosController {
 
 	private final Pedidos view;
+
+	/**
+	 * Construtor da classe PedidosController.
+	 * 
+	 * @param view
+	 */
 
 	public PedidosController(Pedidos view) {
 
@@ -21,6 +34,11 @@ public class PedidosController {
 		this.view = view;
 
 	}
+
+	/**
+	 * Método para geração da lista de pedidos cadastrados possibilitando a seleção
+	 * para a edição ou exclusão de um pedidos.
+	 */
 
 	public DefaultListModel<String> gerarListaPedidos() {
 
@@ -35,6 +53,14 @@ public class PedidosController {
 
 		return model;
 	}
+
+	/**
+	 * Método de controle da tela de pedido onde o usuário terá a opção de realizar
+	 * o CRUD de uma pedido, sendo que as opções de editar e excluir funcionam
+	 * apenas com pelo menos um objeto cadastrado.
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoPedido(ActionEvent e) {
 
@@ -51,8 +77,6 @@ public class PedidosController {
 
 		if (botaoPressionado == view.getBotaoCriarPedido()) {
 
-//			Pedido modelo = CadastraPedidoController.validaDados();
-//			view.getCliente().getPedidos().add(new Pedido(CadastraPedidoController.validaDados()));
 			new CadastraPedido(view.getCliente()).setVisible(true);
 			this.view.dispose();
 		}
@@ -64,7 +88,4 @@ public class PedidosController {
 
 		}
 	}
-
-//	public InserirEditarFrango() {
-
 }

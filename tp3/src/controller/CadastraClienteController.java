@@ -9,10 +9,24 @@ import model.Cliente;
 import view.CadastraCliente;
 import view.ClienteTela;
 
+/**
+ * Controlador da tela de cadastro de cliente, onde será realizado o cadastro de
+ * um cliente.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class CadastraClienteController {
 
 	private final CadastraCliente view;
 	private final Mensagens mensagem;
+
+	/**
+	 * Construtor da classe CadastraClienteControtoller
+	 * 
+	 * @param view
+	 */
 
 	public CadastraClienteController(CadastraCliente view) {
 
@@ -21,6 +35,16 @@ public class CadastraClienteController {
 		this.mensagem = new Mensagens();
 
 	}
+
+	/**
+	 * Método que salvara o novo objeto cliente com os dados inseridos pelo usuário
+	 * se o botão pressionado for o de salvar, mas também poderá voltar para a tela
+	 * de menu se for selecionado a opção de cancelar. Neste método também é
+	 * incluido as mensagens de erro ou sucesso de cadastro do objeto de acordo com
+	 * o retorno da função "Valida dados".
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoCliente(ActionEvent e) {
 
@@ -53,37 +77,12 @@ public class CadastraClienteController {
 
 	}
 
-//	public void editarCliente(ActionEvent e) {
-//
-//		JButton botaoPressionado = (JButton) e.getSource();
-//
-//		if (botaoPressionado == this.view.getBotaoCancelar()) {
-//
-//			new ClienteTela().setVisible(true);
-//			this.view.dispose();
-//
-//		} else if (botaoPressionado == this.view.getBotaoSalvarCliente()) {
-//
-//			Cliente model = validaDados();
-//
-//			if (model == null) {
-//
-//				mensagem.mensagemErroCadastro();
-//
-//			} else {
-//				System.out.println(model);
-//				Dados.getClientes().add(model);
-//				mensagem.mensagemSucessoCadastro();
-//
-//
-//				new ClienteTela().setVisible(true);
-//				this.view.dispose();
-//
-//			}
-//
-//		}
-//
-//	}
+	/**
+	 * Método para a validação dos dados inseridos pelo usuário, retornará null se a
+	 * validação falhar
+	 * 
+	 * @return Cliente - cliente que passou pela validação de dados.
+	 */
 
 	private Cliente validaDados() {
 

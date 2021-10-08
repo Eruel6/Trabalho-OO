@@ -8,10 +8,24 @@ import model.FrangoEmpanado;
 import view.CadastraFrango;
 import view.Frango;
 
+/**
+ * Controlador da tela de cadastro de frango, onde será realizado o cadastro de
+ * um frango.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class CadastraFrangoController {
 
 	private final CadastraFrango view;
 	private final Mensagens mensagem;
+
+	/**
+	 * Construtor da classe CadastraFrangoController
+	 * 
+	 * @param view
+	 */
 
 	public CadastraFrangoController(CadastraFrango view) {
 
@@ -20,6 +34,16 @@ public class CadastraFrangoController {
 		mensagem = new Mensagens();
 
 	}
+
+	/**
+	 * Método que salvara o novo objeto frango com os dados inseridos pelo usuário
+	 * se o botão pressionado for o de salvar, mas também poderá voltar para a tela
+	 * de alimetos se for selecionado a opção de cancelar. Neste método também é
+	 * incluido as mensagens de erro ou sucesso de cadastro do objeto de acordo com
+	 * o retorno da função "Valida dados".
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoFrango(ActionEvent e) {
 
@@ -51,6 +75,13 @@ public class CadastraFrangoController {
 
 	}
 
+	/**
+	 * Método para a validação dos dados inseridos pelo usuário, retornará null se a
+	 * validação falhar
+	 * 
+	 * @return FrangoEmpanado - frango que passou pela validação de dados.
+	 */
+
 	private FrangoEmpanado validaDados() {
 
 		String tamanho = this.view.getTamanhoFrango().getText();
@@ -60,7 +91,8 @@ public class CadastraFrangoController {
 
 		double precoValidado;
 
-		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank()) || corteDoFrango.isBlank()) {
+		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank())
+				|| corteDoFrango.isBlank()) {
 			return null;
 		}
 		try {

@@ -12,9 +12,15 @@ import controller.EditaFrangoController;
 import model.FrangoEmpanado;
 import model.Pedido;
 
-public class EditaFrango extends JFrame implements ActionListener {
+/**
+ * Parametros para a tela de edição de um frango, onde será inserido as
+ * informações que deseja editar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
 
-//	private String novaBatataFrita[] = new String[9];
+public class EditaFrango extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarFrango;
 	private final JButton botaoCancelar;
@@ -31,6 +37,15 @@ public class EditaFrango extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final EditaFrangoController controller;
+
+	/**
+	 * Construtor para a tela de edição de um cliente, os campos devem vir
+	 * preenchidos com as informações que foram cadastradas pelo usuario
+	 * anteriormente e podem ou não serem editadas.
+	 * 
+	 * @param frango
+	 * @param pedido
+	 */
 
 	public EditaFrango(FrangoEmpanado frango, Pedido pedido) {
 
@@ -90,8 +105,11 @@ public class EditaFrango extends JFrame implements ActionListener {
 		this.add(precoFrango);
 		this.add(CorteDoFrango);
 
-//		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de edição de um frango.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

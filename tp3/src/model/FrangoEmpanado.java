@@ -1,8 +1,25 @@
 package model;
 
+/**
+ * Classe filha da classe comida, utilizada para definir um objeto Frango
+ * Empanado.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class FrangoEmpanado extends Comida {
 
 	private String corteDoFrango;
+
+	/**
+	 * Construtor da classe Frango Empanado.
+	 * 
+	 * @param tamanho
+	 * @param descricao
+	 * @param preco
+	 * @param corteDoFrango
+	 */
 
 	public FrangoEmpanado(char tamanho, String descricao, double preco, String corteDoFrango) {
 

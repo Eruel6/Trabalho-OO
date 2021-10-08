@@ -1,10 +1,25 @@
 package model;
 
+/**
+ * Classe abstrata que define parametros comuns aos alimentos do programa.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public abstract class Comida {
 
 	private char tamanho;
 	private String descricao;
 	private double preco;
+
+	/**
+	 * Construtor da classe Comida.
+	 * 
+	 * @param tamanho
+	 * @param descricao
+	 * @param preco
+	 */
 
 	protected Comida(char tamanho, String descricao, double preco) {
 

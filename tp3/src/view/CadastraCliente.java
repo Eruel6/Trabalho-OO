@@ -10,6 +10,14 @@ import javax.swing.JTextField;
 
 import controller.CadastraClienteController;
 
+/**
+ * Parametros para a tela de cadastro de um cliente, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class CadastraCliente extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarCliente;
@@ -24,6 +32,10 @@ public class CadastraCliente extends JFrame implements ActionListener {
 	private JTextField cpfCliente;
 	private JTextField telefoneCliente;
 	private final CadastraClienteController controller;
+
+	/**
+	 * Construtor da tela de cadastro de um cliente
+	 */
 
 	public CadastraCliente() {
 
@@ -84,6 +96,9 @@ public class CadastraCliente extends JFrame implements ActionListener {
 		setVisible(true);
 	}
 
+	/**
+	 * Listener para a tela de cadastro de cliente
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

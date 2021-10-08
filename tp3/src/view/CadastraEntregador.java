@@ -10,6 +10,14 @@ import javax.swing.JTextField;
 
 import controller.CadastraEntregadorController;
 
+/**
+ * Parametros para a tela de cadastro de um entregador, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class CadastraEntregador extends JFrame implements ActionListener {
 
 	private final CadastraEntregadorController controller;
@@ -41,6 +49,10 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 	private final JTextField bancoContaEntregador;
 	private final JTextField agenciaContaEntregador;
 	private final JTextField numeroContaEntregador;
+
+	/**
+	 * Construtor da tela de cadastro de um Entregador.
+	 */
 
 	public CadastraEntregador() {
 
@@ -84,7 +96,7 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 		notaEntregador = new JTextField(200);
 		notaEntregador.setBounds(150, 260, 200, 30);
 
-//		AQUI DIVIDEEDEEEEEEEEEE
+//		CRUD Conta Bancaria
 		labelContaEntregador = new JLabel("Dados da conta Bancaria do entregador");
 		labelContaEntregador.setBounds(10, 300, 400, 50);
 
@@ -138,6 +150,10 @@ public class CadastraEntregador extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de cadastro de um entregador.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

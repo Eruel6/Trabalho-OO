@@ -12,6 +12,14 @@ import javax.swing.JTextField;
 import controller.CadastraPedidoController;
 import model.Cliente;
 
+/**
+ * Parametros para a tela de cadastro de um pedido, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class CadastraPedido extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarPedido;
@@ -24,10 +32,15 @@ public class CadastraPedido extends JFrame implements ActionListener {
 	private final JTextField numeroPedido;
 	private final JTextField metodoPagamentoPedido;
 	private final JTextField retiradaPedido;
-	// private final JComboBox<String> entregadorPedido;
 	private final CadastraPedidoController controller;
 	private final Cliente cliente;
 	private final JComboBox<String> listaEntregadores;
+
+	/**
+	 * Construtor da tela de cadastro de um pedido.
+	 * 
+	 * @param cliente
+	 */
 
 	public CadastraPedido(Cliente cliente) {
 
@@ -67,9 +80,6 @@ public class CadastraPedido extends JFrame implements ActionListener {
 		labelEntregador = new JLabel("Dados Entregador");
 		labelEntregador.setBounds(10, 200, 200, 50);
 
-//		entregadorPedido = new JComboBox<String>;
-//		entregadorPedido.setBounds(150, 210, 200, 30);
-
 		botaoSalvarPedido = new JButton("Salvar");
 		botaoSalvarPedido.setBounds(10, 500, 75, 50);
 		botaoSalvarPedido.addActionListener(this);
@@ -89,9 +99,12 @@ public class CadastraPedido extends JFrame implements ActionListener {
 		this.add(labelMetodoPagamento);
 		this.add(retiradaPedido);
 		this.add(listaEntregadores);
-		// this.add(entregadorPedido);
 
 	}
+
+	/**
+	 * Listener para a tela de cadastro de um pedido.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

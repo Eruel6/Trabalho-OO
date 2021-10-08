@@ -12,9 +12,15 @@ import controller.EditaBatataFritaController;
 import model.BatataFrita;
 import model.Pedido;
 
-public class EditaBatataFrita extends JFrame implements ActionListener {
+/**
+ * Parametros para a tela de edição de uma batata frita, onde será inserido as
+ * informações que deseja editar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
 
-//	private String novaBatataFrita[] = new String[9];
+public class EditaBatataFrita extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarBatataFrita;
 	private final JButton botaoCancelar;
@@ -31,6 +37,15 @@ public class EditaBatataFrita extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final EditaBatataFritaController controller;
+
+	/**
+	 * Construtor para a tela de edição de uma batata frita, os campos devem vir
+	 * preenchidos com as informações que foram cadastradas pelo usuario
+	 * anteriormente e podem ou não serem editadas.
+	 * 
+	 * @param batataFrita
+	 * @param pedido
+	 */
 
 	public EditaBatataFrita(BatataFrita batataFrita, Pedido pedido) {
 
@@ -90,8 +105,11 @@ public class EditaBatataFrita extends JFrame implements ActionListener {
 		this.add(precoBatataFrita);
 		this.add(acompanhamentoBatataFrita);
 
-//		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de edição de uma batat frita.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

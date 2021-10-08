@@ -11,6 +11,14 @@ import javax.swing.JTextField;
 import controller.EditaEntregadorController;
 import model.Entregador;
 
+/**
+ * Parametros para a tela de edição de um entregador, onde será inserido as
+ * informações que deseja editar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class EditaEntregador extends JFrame implements ActionListener {
 
 //	-------------------Labels Entregador
@@ -44,13 +52,19 @@ public class EditaEntregador extends JFrame implements ActionListener {
 	private final EditaEntregadorController controller;
 	private final Entregador entregador;
 
+	/**
+	 * Construtor para a tela de edição de um cliente, os campos devem vir
+	 * preenchidos com as informações que foram cadastradas pelo usuario
+	 * anteriormente e podem ou não serem editadas.
+	 * 
+	 * @param entregador
+	 */
+
 	public EditaEntregador(Entregador entregador) {
 
 		super("Informaçãoes Clientes");
 
 		String notaCorreta;
-
-		// controller = new CadastraClienteController(this);
 
 		this.controller = new EditaEntregadorController(this);
 		this.entregador = entregador;
@@ -92,7 +106,7 @@ public class EditaEntregador extends JFrame implements ActionListener {
 		notaEntregador = new JTextField(notaCorreta);
 		notaEntregador.setBounds(150, 260, 200, 30);
 
-//		SCATMAN'S WORLD
+//		CRUD de conta bancaria 
 		labelContaEntregador = new JLabel("Dados da conta Bancaria do entregador");
 		labelContaEntregador.setBounds(10, 300, 400, 50);
 
@@ -146,6 +160,10 @@ public class EditaEntregador extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de edição de um entregador.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

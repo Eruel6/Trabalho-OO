@@ -11,6 +11,14 @@ import javax.swing.JList;
 import controller.FrangoController;
 import model.Pedido;
 
+/**
+ * Parametros da tela de frango, onde será dada a opção do usuário realizar o
+ * CRUD de frango.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class Frango extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarFrango;
@@ -21,6 +29,12 @@ public class Frango extends JFrame implements ActionListener {
 	private final FrangoController controllerFrango;
 	private final JList<String> listaFrangos;
 	private final Pedido pedido;
+
+	/**
+	 * Construtor da tela de frango
+	 * 
+	 * @param pedido
+	 */
 
 	public Frango(Pedido pedido) {
 
@@ -64,6 +78,10 @@ public class Frango extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de frango
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

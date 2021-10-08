@@ -11,6 +11,14 @@ import javax.swing.JTextField;
 import controller.CadastraMolhoController;
 import model.Pedido;
 
+/**
+ * Parametros para a tela de cadastro de um molho, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class CadastraMolho extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarMolho;
@@ -26,6 +34,12 @@ public class CadastraMolho extends JFrame implements ActionListener {
 	private final JTextField tipoMolho;
 	private final CadastraMolhoController controller;
 	private final Pedido pedido;
+
+	/**
+	 * Construtor da tela de cadastro de um pedido
+	 * 
+	 * @param pedido
+	 */
 
 	public CadastraMolho(Pedido pedido) {
 
@@ -85,6 +99,10 @@ public class CadastraMolho extends JFrame implements ActionListener {
 		this.add(tipoMolho);
 
 	}
+
+	/**
+	 * Listener para a tela de cadastro de um molho.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

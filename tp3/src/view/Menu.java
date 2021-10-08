@@ -10,12 +10,24 @@ import javax.swing.WindowConstants;
 
 import controller.MenuController;
 
+/**
+ * Parametros da tela de menu, onde será dada a opção do usuário navegar para a
+ * tela de cliente ou de entregadores para começar a utilização do programa.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class Menu extends JFrame implements ActionListener {
 
 	private final JButton botaoCliente;
 	private final JButton botaoEntregador;
 	private final JLabel menuLabel;
 	private final MenuController controller;
+
+	/**
+	 * Construtor da tela de menu.
+	 */
 
 	public Menu() {
 
@@ -43,6 +55,10 @@ public class Menu extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 	}
+
+	/**
+	 * Listener da tela de menu.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

@@ -11,6 +11,14 @@ import javax.swing.JList;
 import controller.MolhoController;
 import model.Pedido;
 
+/**
+ * Parametros da tela de molho, onde será dada a opção do usuário realizar o
+ * CRUD de molho
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class MolhoTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarMolho;
@@ -22,6 +30,12 @@ public class MolhoTela extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final MolhoController controllerMolho;
+
+	/**
+	 * Contrutor da tela de molho
+	 * 
+	 * @param pedido
+	 */
 
 	public MolhoTela(Pedido pedido) {
 
@@ -65,6 +79,10 @@ public class MolhoTela extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener da tela de molho.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

@@ -12,9 +12,23 @@ import view.BatataFritaTela;
 import view.CadastraBatataFrita;
 import view.EditaBatataFrita;
 
+/**
+ * Controlador da tela da batata frita, onde será realizado o CRUD de batata
+ * frita.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class BatataFritaController {
 
 	private final BatataFritaTela view;
+
+	/**
+	 * Construtor da classe batata frita controller.
+	 * 
+	 * @param view
+	 */
 
 	public BatataFritaController(BatataFritaTela view) {
 
@@ -22,6 +36,12 @@ public class BatataFritaController {
 		this.view = view;
 
 	}
+
+	/**
+	 * Método para geração da lista de batata fritas cadastradas, possibilitando a
+	 * seleção para edição ou exclusão de uma batata frita
+	 * 
+	 */
 
 	public DefaultListModel<String> gerarListaBatataFrita() {
 
@@ -41,6 +61,14 @@ public class BatataFritaController {
 
 		return model;
 	}
+
+	/**
+	 * Método de controle da tela de batata frita onde o usuário terá a opção de
+	 * realizar o CRUD de uma batata frita, sendo que as opções de editar e excluir
+	 * funcionam apenas com pelo menos um objeto cadastrado.
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoBatataFrita(ActionEvent e) {
 
@@ -74,7 +102,6 @@ public class BatataFritaController {
 
 			new Alimento(view.getPedido()).setVisible(true);
 			this.view.dispose();
-			// new Molho();
 
 		}
 

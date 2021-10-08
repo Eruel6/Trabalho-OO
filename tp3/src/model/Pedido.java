@@ -2,6 +2,13 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Classe para cadastrar os pedidos que serão realizados no programa.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class Pedido {
 
 	private int numero;
@@ -12,6 +19,15 @@ public class Pedido {
 	private Entregador entregador;
 	private double cupomDeDesconto;
 
+	/**
+	 * Construtor da classe Pedido sem o cupom de desconto aplicado.
+	 * 
+	 * @param numero
+	 * @param metodoDePagamento
+	 * @param retirada
+	 * @param entregador
+	 */
+
 	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador) {
 		this.numero = numero;
 		this.itens = new ArrayList<>();
@@ -21,6 +37,17 @@ public class Pedido {
 		this.entregador = entregador;
 		this.cupomDeDesconto = 0;
 	}
+
+	/**
+	 * Construtor da classe pedido com a possibilidade de aplicação de um cupom de
+	 * desconto.
+	 * 
+	 * @param numero
+	 * @param metodoDePagamento
+	 * @param retirada
+	 * @param entregador
+	 * @param cupomDeDesconto
+	 */
 
 	public Pedido(int numero, String metodoDePagamento, Boolean retirada, Entregador entregador,
 			double cupomDeDesconto) {

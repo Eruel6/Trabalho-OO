@@ -12,9 +12,22 @@ import view.CadastraFrango;
 import view.EditaFrango;
 import view.Frango;
 
+/**
+ * Controlador da tela do frango, onde será realizado o CRUD de frango.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class FrangoController {
 
 	private final Frango view;
+
+	/**
+	 * Construtor da classe FrangoController
+	 * 
+	 * @param view
+	 */
 
 	public FrangoController(Frango view) {
 
@@ -22,6 +35,11 @@ public class FrangoController {
 		this.view = view;
 
 	}
+
+	/**
+	 * Método para geração da lista de frangos cadastrados possibilitando a seleção
+	 * para a edição ou exclusão de um frango.
+	 */
 
 	public DefaultListModel<String> gerarListaFrango() {
 
@@ -41,6 +59,14 @@ public class FrangoController {
 
 		return model;
 	}
+
+	/**
+	 * Método de controle da tela de frango onde o usuário terá a opção de realizar
+	 * o CRUD de um frango, sendo que as opções de editar e excluir funcionam apenas
+	 * com pelo menos um objeto cadastrado.
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoFrango(ActionEvent e) {
 
@@ -79,7 +105,5 @@ public class FrangoController {
 		}
 
 	}
-
-//	public InserirEditarFrango() {
 
 }

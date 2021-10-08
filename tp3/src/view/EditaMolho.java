@@ -12,9 +12,15 @@ import controller.EditaMolhoController;
 import model.Molho;
 import model.Pedido;
 
-public class EditaMolho extends JFrame implements ActionListener {
+/**
+ * Parametros para a tela de edição de um molho, onde será inserido as
+ * informações que deseja editar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
 
-//	private String novaBatataFrita[] = new String[9];
+public class EditaMolho extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarMolho;
 	private final JButton botaoCancelar;
@@ -31,6 +37,15 @@ public class EditaMolho extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final EditaMolhoController controller;
+
+	/**
+	 * Construtor para a tela de edição de um molho, os campos devem vir preenchidos
+	 * com as informações que foram cadastradas pelo usuario anteriormente e podem
+	 * ou não serem editadas.
+	 * 
+	 * @param molho
+	 * @param pedido
+	 */
 
 	public EditaMolho(Molho molho, Pedido pedido) {
 
@@ -90,8 +105,11 @@ public class EditaMolho extends JFrame implements ActionListener {
 		this.add(precoMolho);
 		this.add(tipoDoMolho);
 
-//		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de edição de um molho
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

@@ -12,9 +12,22 @@ import view.CadastraMolho;
 import view.EditaMolho;
 import view.MolhoTela;
 
+/**
+ * Controlador da tela de molho, onde será realizado o CRUD de molho.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class MolhoController {
 
 	private final MolhoTela view;
+
+	/**
+	 * Construtor da classe MolhoController.
+	 * 
+	 * @param view
+	 */
 
 	public MolhoController(MolhoTela view) {
 
@@ -22,6 +35,11 @@ public class MolhoController {
 		this.view = view;
 
 	}
+
+	/**
+	 * Método para geração da lista de molhos cadastrados possibilitando a seleção
+	 * para a edição ou exclusão de um molho.
+	 */
 
 	public DefaultListModel<String> gerarListaMolho() {
 
@@ -41,6 +59,14 @@ public class MolhoController {
 
 		return model;
 	}
+
+	/**
+	 * Método de controle da tela de molho onde o usuário terá a opção de realizar o
+	 * CRUD de um molho, sendo que as opções de editar e excluir funcionam apenas
+	 * com pelo menos um objeto cadastrado.
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoMolho(ActionEvent e) {
 
@@ -73,8 +99,6 @@ public class MolhoController {
 
 			new Alimento(view.getPedido()).setVisible(true);
 			this.view.dispose();
-
-			// new Molho();
 
 		}
 

@@ -10,6 +10,14 @@ import javax.swing.JLabel;
 import controller.AlimentosController;
 import model.Pedido;
 
+/**
+ * Parametros da tela de alimentos, onde serão dadas as opçoes de realizar um
+ * CRUD de um frango, uma batat frita ou um molho
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class Alimento extends JFrame implements ActionListener {
 
 	private final JButton botaoFrango;
@@ -19,6 +27,12 @@ public class Alimento extends JFrame implements ActionListener {
 	private final JLabel labelAlimento;
 	private final AlimentosController controllerAlimento;
 	private final Pedido pedido;
+
+	/**
+	 * Construtor da classe que define a tela de alimentos.
+	 * 
+	 * @param pedido
+	 */
 
 	public Alimento(Pedido pedido) {
 
@@ -57,6 +71,10 @@ public class Alimento extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de alimentos
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

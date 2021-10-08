@@ -11,6 +11,13 @@ import javax.swing.JList;
 import controller.BatataFritaController;
 import model.Pedido;
 
+/**
+ * Parametros da tela de Batata Frita
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class BatataFritaTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarBatataFrita;
@@ -22,6 +29,12 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final BatataFritaController controllerBatataFrita;
+
+	/**
+	 * Construtor da classe que define Batata Frita
+	 * 
+	 * @param pedido
+	 */
 
 	public BatataFritaTela(Pedido pedido) {
 
@@ -65,6 +78,10 @@ public class BatataFritaTela extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de batata frita
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

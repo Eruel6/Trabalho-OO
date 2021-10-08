@@ -1,10 +1,26 @@
 package model;
 
+/**
+ * Classe abstrata que define parametros comuns às pessoas cadastradas no
+ * programa.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public abstract class Pessoa {
 
 	private String nome;
 	private String endereco;
 	private String cpf;
+
+	/**
+	 * Construtor da classe Pessoa.
+	 * 
+	 * @param nome
+	 * @param endereco
+	 * @param cpf
+	 */
 
 	protected Pessoa(String nome, String endereco, String cpf) {
 

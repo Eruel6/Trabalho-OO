@@ -8,10 +8,24 @@ import model.Cliente;
 import view.ClienteTela;
 import view.EditaCliente;
 
+/**
+ * Controlador da tela de edição de um cliente, onde será realizado a edição dos
+ * dados previamente cadastrados ao objeto cliente.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class EditaClienteController {
 
 	private final EditaCliente view;
 	private final Mensagens mensagem;
+
+	/**
+	 * Construtor da classe EditaClienteController
+	 * 
+	 * @param view
+	 */
 
 	public EditaClienteController(EditaCliente view) {
 
@@ -20,6 +34,16 @@ public class EditaClienteController {
 		this.mensagem = new Mensagens();
 
 	}
+
+	/**
+	 * Método para que salvara o objeto cliente após a edição com os novos dados
+	 * inseridos pelo usuário se o botão pressionado for o de salvar, mas também
+	 * poderá voltar para a tela de cliente se for selecionado a opção de cancelar.
+	 * Neste método também é incluido as mensagens de erro ou sucesso de cadastro do
+	 * objeto de acordo com o retorno da função "Valida dados".
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoCliente(ActionEvent e) {
 
@@ -55,6 +79,13 @@ public class EditaClienteController {
 		}
 
 	}
+
+	/**
+	 * Método para a validação dos dados inseridos pelo usuário, retornará null se a
+	 * validação falhar
+	 * 
+	 * @return Cliente - cliente que passou pela validação de dados.
+	 */
 
 	private Cliente validaDados() {
 

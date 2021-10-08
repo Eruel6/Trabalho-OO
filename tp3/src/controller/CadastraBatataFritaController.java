@@ -8,10 +8,24 @@ import model.BatataFrita;
 import view.BatataFritaTela;
 import view.CadastraBatataFrita;
 
+/**
+ * Controlador da tela de cadastro da batata frita, onde será realizado o
+ * cadastro de uma batata frita.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class CadastraBatataFritaController {
 
 	private final CadastraBatataFrita view;
 	private final Mensagens mensagem;
+
+	/**
+	 * Construtor da classe CadastraBatataFritaController
+	 * 
+	 * @param view
+	 */
 
 	public CadastraBatataFritaController(CadastraBatataFrita view) {
 
@@ -20,6 +34,16 @@ public class CadastraBatataFritaController {
 		mensagem = new Mensagens();
 
 	}
+
+	/**
+	 * Método que salvara o novo objeto batata frita com os dados inseridos pelo
+	 * usuário se o botão pressionado for o de salvar, mas também poderá voltar para
+	 * a tela de alimentos se for selecionado a opção de cancelar. Neste método
+	 * também é incluido as mensagens de erro ou sucesso de cadastro do objeto de
+	 * acordo com o retorno da função "Valida dados".
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoBatataFrita(ActionEvent e) {
 
@@ -51,6 +75,13 @@ public class CadastraBatataFritaController {
 
 	}
 
+	/**
+	 * Método para a validação dos dados inseridos pelo usuário, retornará null se a
+	 * validação falhar
+	 * 
+	 * @return BatataFrita - batata frita que passou pela validação de dados.
+	 */
+
 	private BatataFrita validaDados() {
 
 		String tamanho = this.view.getTamanhoBatataFrita().getText();
@@ -60,7 +91,8 @@ public class CadastraBatataFritaController {
 
 		double precoValidado;
 
-		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank()) || acompanhamento.isBlank()) {
+		if (!(tamanho.equals("P") || tamanho.equals("M") || tamanho.equals("G")) || (descricao.isBlank())
+				|| acompanhamento.isBlank()) {
 			return null;
 		}
 		try {

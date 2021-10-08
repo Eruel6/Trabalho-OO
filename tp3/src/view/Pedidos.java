@@ -11,6 +11,14 @@ import javax.swing.JList;
 import controller.PedidosController;
 import model.Cliente;
 
+/**
+ * Parametros da tela de pedidos, onde será dada a opção do usuário realizar o
+ * CRUD de pedido.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class Pedidos extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarPedido;
@@ -20,6 +28,12 @@ public class Pedidos extends JFrame implements ActionListener {
 	private final PedidosController controllerPedidos;
 	private final JList<String> listaPedidos;
 	private final Cliente cliente;
+
+	/**
+	 * Construtor da tela de pedidos
+	 * 
+	 * @param cliente
+	 */
 
 	public Pedidos(Cliente cliente) {
 
@@ -58,6 +72,10 @@ public class Pedidos extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener da tela de pedidos.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

@@ -13,9 +13,23 @@ import view.EditaCliente;
 import view.Menu;
 import view.Pedidos;
 
+/**
+ * Controlador da tela cliente, onde será realizado o CRUD de cliente, além de
+ * poder selecionar o cliente para que possa ser realizado o pedido.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class ClienteController {
 
 	private final ClienteTela view;
+
+	/**
+	 * Construtor da classe ClienteController
+	 * 
+	 * @param view
+	 */
 
 	public ClienteController(ClienteTela view) {
 
@@ -23,6 +37,14 @@ public class ClienteController {
 		this.view = view;
 
 	}
+
+	/**
+	 * Método para a impressão da lista de clientes, tornando possível a seleção dos
+	 * clientes cadastrados que torna possível a atribuição de pedidos aos clientes,
+	 * a edição e a exclusão de cliente.
+	 * 
+	 * @return model - cliente cadastrado
+	 */
 
 	public DefaultListModel<String> gerarListaCliente() {
 
@@ -35,6 +57,15 @@ public class ClienteController {
 
 		return model;
 	}
+
+	/**
+	 * Método que define o que irá acontecer de acordo com o botão que foi apertado
+	 * na tela de cliente, levando para as outras telas que possibilitarão o CRUD de
+	 * um cliente, neste controller pode se consultar também os pedidos atribuidos a
+	 * um cliente através do botão "pedido"
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoCliente(ActionEvent e) {
 
@@ -71,7 +102,6 @@ public class ClienteController {
 			Cliente clienteSelecionado = Dados.getClientes().get(selectedIndex);
 			new Pedidos(clienteSelecionado).setVisible(true);
 			this.view.dispose();
-			// new Molho();
 
 		}
 
@@ -79,36 +109,9 @@ public class ClienteController {
 
 			new Menu().setVisible(true);
 			this.view.dispose();
-			// new Molho();
 
 		}
 
 	}
-
-	/*
-	 * public int pressionarBotaoListaCliente(ListSelectionEvent e) {
-	 *
-	 * int index = 0;
-	 *
-	 * JList<String> listaPressionada = (JList<String>) e.getSource(); JButton
-	 * botaoPressionado = (JButton) e.getSource();
-	 *
-	 * if(listaPressionada == view.getListaClientes()) {
-	 *
-	 * index = view.getListaClientes().getSelectedIndex();
-	 *
-	 * if(botaoPressionado == view.getBotaoExcluirCliente()) {
-	 *
-	 * Delete(index); }
-	 *
-	 * view.getListaClientes().getSelectedValue();
-	 *
-	 * }
-	 *
-	 *
-	 * return index;
-	 *
-	 * }
-	 */
 
 }

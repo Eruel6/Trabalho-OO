@@ -1,8 +1,24 @@
 package model;
 
+/**
+ * Classe filha da classe comida, utilizada para definir um objeto Batata Frita.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class BatataFrita extends Comida {
 
 	private String acompanhamento;
+
+	/**
+	 * Construtor da classe Batata Frita.
+	 * 
+	 * @param tamanho
+	 * @param descricao
+	 * @param preco
+	 * @param acompanhamento
+	 */
 
 	public BatataFrita(char tamanho, String descricao, double preco, String acompanhamento) {
 

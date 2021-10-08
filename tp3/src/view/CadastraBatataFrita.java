@@ -11,9 +11,15 @@ import javax.swing.JTextField;
 import controller.CadastraBatataFritaController;
 import model.Pedido;
 
-public class CadastraBatataFrita extends JFrame implements ActionListener {
+/**
+ * Parametros para a tela de cadastro de uma batata frita, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
 
-//	private String novaBatataFrita[] = new String[9];
+public class CadastraBatataFrita extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarBatataFrita;
 	private final JButton botaoCancelar;
@@ -29,6 +35,12 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 	private final Pedido pedido;
 
 	private final CadastraBatataFritaController controller;
+
+	/**
+	 * Construtor da tela de cadastro batata frita
+	 * 
+	 * @param pedido
+	 */
 
 	public CadastraBatataFrita(Pedido pedido) {
 
@@ -87,8 +99,11 @@ public class CadastraBatataFrita extends JFrame implements ActionListener {
 		this.add(precoBatataFrita);
 		this.add(acompanhamentoBatataFrita);
 
-//		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de cadastro de batata frita
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

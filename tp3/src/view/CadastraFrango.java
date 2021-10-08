@@ -11,6 +11,14 @@ import javax.swing.JTextField;
 import controller.CadastraFrangoController;
 import model.Pedido;
 
+/**
+ * Parametros para a tela de cadastro de um frango, onde será inserido as
+ * informações que deseja cadastrar.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class CadastraFrango extends JFrame implements ActionListener {
 
 	private final JButton botaoSalvarFrango;
@@ -26,6 +34,12 @@ public class CadastraFrango extends JFrame implements ActionListener {
 	private final JTextField corteDoFrango;
 	private final CadastraFrangoController controller;
 	private final Pedido pedido;
+
+	/**
+	 * Construtor da tela de cadastro de um Frango.
+	 * 
+	 * @param pedido
+	 */
 
 	public CadastraFrango(Pedido pedido) {
 
@@ -85,6 +99,10 @@ public class CadastraFrango extends JFrame implements ActionListener {
 		this.add(corteDoFrango);
 
 	}
+
+	/**
+	 * Listener para a tela de cadastro de um frango.
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

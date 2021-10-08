@@ -11,6 +11,16 @@ import javax.swing.JList;
 //import model.Cliente;
 import controller.ClienteController;
 
+/**
+ * Parametros para a tela de cliente, onde será listado os cliente que estão
+ * cadastrados e dará ao usuário a opção de cadastrar um novo cliente, editar um
+ * cliente, excluir um cliente ou realizar um pedido atrelado ao cliente
+ * seleconado.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (out 2021)
+ */
+
 public class ClienteTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarCliente;
@@ -22,6 +32,10 @@ public class ClienteTela extends JFrame implements ActionListener {
 	private final JList<String> listaClientes;
 
 	private final ClienteController controllerCliente;
+
+	/**
+	 * Construtor da tela de CLiente
+	 */
 
 	public ClienteTela() {
 
@@ -69,6 +83,10 @@ public class ClienteTela extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de cliente
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

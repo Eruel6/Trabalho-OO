@@ -10,6 +10,14 @@ import javax.swing.JList;
 
 import controller.EntregadorController;
 
+/**
+ * Parametros da tela de entregadores, onde será dada a opção do usuário
+ * realizar o CRUD de entregador.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class EntregadorTela extends JFrame implements ActionListener {
 
 	private final JButton botaoCadastrarEntregador;
@@ -20,6 +28,10 @@ public class EntregadorTela extends JFrame implements ActionListener {
 	private JList<String> listaEntregadores;
 
 	private final EntregadorController controllerEntregador;
+
+	/**
+	 * Construtor que define a tela de entregador
+	 */
 
 	public EntregadorTela() {
 
@@ -62,6 +74,10 @@ public class EntregadorTela extends JFrame implements ActionListener {
 
 		setVisible(true);
 	}
+
+	/**
+	 * Listener para a tela de Entregador
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

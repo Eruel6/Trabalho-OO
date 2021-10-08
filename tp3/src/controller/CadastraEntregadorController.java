@@ -10,10 +10,24 @@ import model.Entregador;
 import view.CadastraEntregador;
 import view.EntregadorTela;
 
+/**
+ * Controlador da tela de cadastro de entregador, onde será realizado o cadastro
+ * de um entregador.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class CadastraEntregadorController {
 
 	private final CadastraEntregador view;
 	private final Mensagens mensagem;
+
+	/**
+	 * Construtor da classe CadastraEntregadorController
+	 * 
+	 * @param view
+	 */
 
 	public CadastraEntregadorController(CadastraEntregador view) {
 
@@ -22,6 +36,16 @@ public class CadastraEntregadorController {
 		this.mensagem = new Mensagens();
 
 	}
+
+	/**
+	 * Método que salvara o novo objeto entregador com os dados inseridos pelo
+	 * usuário se o botão pressionado for o de salvar, mas também poderá voltar para
+	 * a tela de menu se for selecionado a opção de cancelar. Neste método também é
+	 * incluido as mensagens de erro ou sucesso de cadastro do objeto de acordo com
+	 * o retorno da função "Valida dados".
+	 * 
+	 * @param e
+	 */
 
 	public void pressionarBotaoEntregador(ActionEvent e) {
 
@@ -51,6 +75,13 @@ public class CadastraEntregadorController {
 		}
 
 	}
+
+	/**
+	 * Método para a validação dos dados inseridos pelo usuário, retornará null se a
+	 * validação falhar
+	 * 
+	 * @return Entregador - Entregador que passou pela validação de dados.
+	 */
 
 	private Entregador validaDados() {
 

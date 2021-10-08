@@ -1,10 +1,25 @@
 package model;
 
+/**
+ * Classe que define o modelo do objeto conta bancaria.
+ * 
+ * @author Arthur Taylor e Thiago Oliveira
+ * @version 1.0 (Out 2021)
+ */
+
 public class ContaBancaria {
 
 	private String banco;
 	private int agencia;
 	private String conta;
+
+	/**
+	 * Construtor da classe Conta Bancaria.
+	 * 
+	 * @param banco
+	 * @param agencia
+	 * @param conta
+	 */
 
 	public ContaBancaria(String banco, int agencia, String conta) {
 		super();
